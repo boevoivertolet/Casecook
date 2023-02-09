@@ -1,7 +1,16 @@
 .header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
 	height: 50px;
 	padding: 0;
-	border: 1px solid black;
 	color: #686869;
 	background-color: #333336;
+}
+.logo {
+	margin-left: 23%;
+	width: 35px;
+	height: 35px;
+	background-color: inherit;
 }
