@@ -1,0 +1,8 @@
+.content {
+	width: 70%;
+	margin: 5px;
+	border: 1px solid black;
+	color: #686869;
+	height: 100vh;
+	border-radius: 15px;
+}

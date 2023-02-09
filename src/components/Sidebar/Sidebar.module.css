@@ -1,0 +1,33 @@
+.sidebar {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	align-content: flex-end;
+	align-items: flex-end;
+
+	height: 700px;
+	margin: 5px;
+	color: #686869;
+}
+.sidebarNav a {
+	text-decoration: none;
+	background-color: inherit;
+	color: #888888;
+	font-size: 13px;
+}
+.sidebarNav {
+	border-radius: 5px;
+	padding: 5px;
+	width: 100px;
+	margin: 10px;
+	text-align: start;
+}
+.sidebarNav:hover {
+	background-color: #333336;
+}
+.sidebarLinks {
+	order: 0;
+	flex: 1 1 100%;
+	align-self: flex-end;
+}
