@@ -9,8 +9,57 @@
 	background-color: #333336;
 }
 .logo {
-	margin-left: 23%;
 	width: 35px;
 	height: 35px;
 	background-color: inherit;
+}
+.logoBlock {
+	margin-left: 23%;
+	background-color: inherit;
+}
+.logoBlock span {
+	margin-left: 10px;
+	background-color: inherit;
+	font-weight: bold;
+	color: #ffffff;
+	text-shadow: 0px 1px 0 rgb(NaN, 192, 192), 0px -1px 0 rgb(NaN, 192, 192),
+		1px 0px 0 rgb(NaN, 192, 192), -1px 0px 0 rgb(NaN, 192, 192),
+		1px 1px 0 rgb(NaN, 192, 192), 1px -1px 0 rgb(NaN, 192, 192),
+		-1px 1px 0 rgb(NaN, 192, 192), -1px -1px 0 rgb(NaN, 192, 192),
+		0px 2px 0 rgb(NaN, 192, 192), 0px -2px 0 rgb(NaN, 192, 192),
+		2px 0px 0 rgb(NaN, 192, 192), -2px 0px 0 rgb(NaN, 192, 192),
+		2px 2px 0 rgb(NaN, 192, 192), 2px -2px 0 rgb(NaN, 192, 192),
+		-2px 2px 0 rgb(NaN, 192, 192), -2px -2px 0 rgb(NaN, 192, 192),
+		0px 3px 0 rgb(NaN, 192, 192), 0px -3px 0 rgb(NaN, 192, 192),
+		3px 0px 0 rgb(NaN, 192, 192), -3px 0px 0 rgb(NaN, 192, 192),
+		3px 3px 0 rgb(NaN, 192, 192), 3px -3px 0 rgb(NaN, 192, 192),
+		-3px 3px 0 rgb(NaN, 192, 192), -3px -3px 0 rgb(NaN, 192, 192);
+	-webkit-text-shadow: 0px 1px 0 rgb(NaN, 192, 192),
+		0px -1px 0 rgb(NaN, 192, 192), 1px 0px 0 rgb(NaN, 192, 192),
+		-1px 0px 0 rgb(NaN, 192, 192), 1px 1px 0 rgb(NaN, 192, 192),
+		1px -1px 0 rgb(NaN, 192, 192), -1px 1px 0 rgb(NaN, 192, 192),
+		-1px -1px 0 rgb(NaN, 192, 192), 0px 2px 0 rgb(NaN, 192, 192),
+		0px -2px 0 rgb(NaN, 192, 192), 2px 0px 0 rgb(NaN, 192, 192),
+		-2px 0px 0 rgb(NaN, 192, 192), 2px 2px 0 rgb(NaN, 192, 192),
+		2px -2px 0 rgb(NaN, 192, 192), -2px 2px 0 rgb(NaN, 192, 192),
+		-2px -2px 0 rgb(NaN, 192, 192), 0px 3px 0 rgb(NaN, 192, 192),
+		0px -3px 0 rgb(NaN, 192, 192), 3px 0px 0 rgb(NaN, 192, 192),
+		-3px 0px 0 rgb(NaN, 192, 192), 3px 3px 0 rgb(NaN, 192, 192),
+		3px -3px 0 rgb(NaN, 192, 192), -3px 3px 0 rgb(NaN, 192, 192),
+		-3px -3px 0 rgb(NaN, 192, 192);
+	-moz-text-shadow: 0px 1px 0 rgb(NaN, 192, 192), 0px -1px 0 rgb(NaN, 192, 192),
+		1px 0px 0 rgb(NaN, 192, 192), -1px 0px 0 rgb(NaN, 192, 192),
+		1px 1px 0 rgb(NaN, 192, 192), 1px -1px 0 rgb(NaN, 192, 192),
+		-1px 1px 0 rgb(NaN, 192, 192), -1px -1px 0 rgb(NaN, 192, 192),
+		0px 2px 0 rgb(NaN, 192, 192), 0px -2px 0 rgb(NaN, 192, 192),
+		2px 0px 0 rgb(NaN, 192, 192), -2px 0px 0 rgb(NaN, 192, 192),
+		2px 2px 0 rgb(NaN, 192, 192), 2px -2px 0 rgb(NaN, 192, 192),
+		-2px 2px 0 rgb(NaN, 192, 192), -2px -2px 0 rgb(NaN, 192, 192),
+		0px 3px 0 rgb(NaN, 192, 192), 0px -3px 0 rgb(NaN, 192, 192),
+		3px 0px 0 rgb(NaN, 192, 192), -3px 0px 0 rgb(NaN, 192, 192),
+		3px 3px 0 rgb(NaN, 192, 192), 3px -3px 0 rgb(NaN, 192, 192),
+		-3px 3px 0 rgb(NaN, 192, 192), -3px -3px 0 rgb(NaN, 192, 192);
+	font-size: 38px;
+	color: rgb(255, 255, 255);
+	font-family: Verdana, Geneva, sans-serif;
 }

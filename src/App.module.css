@@ -7,6 +7,7 @@
 	align-items: flex-start;
 	height: 100vh;
 	color: #ffffff;
+	min-width: 1000px;
 }
 
 .header {
