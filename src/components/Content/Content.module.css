@@ -190,13 +190,14 @@ button {
 	font-family: inherit;
 	color: #ffffff;
 	padding: 0 16px;
-	border-radius: 14px;
+	border-radius: 9px;
 	vertical-align: middle;
 	font-size: 13px;
 	background-color: #666666;
 	border: none;
 	width: 60px;
 	height: 30px;
+	font-weight: 600;
 }
 button:hover {
 	background-color: #626263;
@@ -204,4 +205,5 @@ button:hover {
 button:active {
 	font-size: 11px;
 	color: #bbbebd;
+	font-weight: 600;
 }
