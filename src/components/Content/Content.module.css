@@ -91,7 +91,7 @@
 .ava {
 	position: relative;
 	bottom: 70px;
-	left: 80px;
+	left: 15px;
 	z-index: 101;
 	border: 3px #333336 solid;
 	border-radius: 50%;
@@ -165,7 +165,8 @@
 	background-color: #333336;
 }
 .textarea {
-	padding-top: 25px;
+	line-height: 40px;
+	outline: none;
 	overflow: hidden;
 	resize: none;
 	text-indent: 30px;
@@ -174,7 +175,7 @@
 	border: none;
 	margin-bottom: 15px;
 	background-color: #444446;
-	height: 40px;
+	height: 38px;
 	color: #686869;
 	font-size: 14px;
 }
