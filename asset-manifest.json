@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/casecook/static/css/main.abd80481.css",
+    "main.js": "/casecook/static/js/main.08ec4ee1.js",
+    "index.html": "/casecook/index.html",
+    "main.abd80481.css.map": "/casecook/static/css/main.abd80481.css.map",
+    "main.08ec4ee1.js.map": "/casecook/static/js/main.08ec4ee1.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.abd80481.css",
+    "static/js/main.08ec4ee1.js"
+  ]
+}
