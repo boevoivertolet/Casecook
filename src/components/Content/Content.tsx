@@ -25,9 +25,12 @@ export const Content = () => {
 			</div>
 			<div className={s.postsFriendsContainer}>
 				<div className={s.postsContainer}>
-					<textarea
-						className={s.textarea}
-						placeholder="What's new ?"></textarea>
+					<div className={s.textAreaButtonBlock}>
+						<textarea
+							className={s.textarea}
+							placeholder="What's new ?"></textarea>
+						<button>Post</button>
+					</div>
 					<div className={s.posts}>
 						<div className={s.postBody}>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.

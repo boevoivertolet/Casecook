@@ -107,6 +107,7 @@
 /* postsContainer */
 
 .postsFriendsContainer {
+	flex-wrap: wrap;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -178,4 +179,29 @@
 	height: 38px;
 	color: #686869;
 	font-size: 14px;
+}
+.textAreaButtonBlock {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	margin-bottom: 15px;
+}
+button {
+	font-family: inherit;
+	color: #ffffff;
+	padding: 0 16px;
+	border-radius: 14px;
+	vertical-align: middle;
+	font-size: 13px;
+	background-color: #666666;
+	border: none;
+	width: 60px;
+	height: 30px;
+}
+button:hover {
+	background-color: #626263;
+}
+button:active {
+	font-size: 11px;
+	color: #bbbebd;
 }

@@ -11,6 +11,7 @@
 }
 
 .header {
+	flex-wrap: wrap;
 	width: 100%;
 	order: 0;
 	flex: 1 1 100%;
@@ -18,6 +19,7 @@
 }
 
 .sidebar {
+	flex-wrap: wrap;
 	width: 30%;
 	order: 0;
 	flex: 3 1 auto;
@@ -25,6 +27,7 @@
 }
 
 .content {
+	flex-wrap: wrap;
 	width: 70%;
 	order: 0;
 	flex: 7 1 auto;
