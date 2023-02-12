@@ -3,8 +3,8 @@ import {
 	combineReducers,
 	legacy_createStore as createStore
 } from 'redux'
+import profileReducer, { ProfileActionType } from './reducers/profileReducer'
 import thunk from 'redux-thunk'
-import profileReducer from './reducers/profileReducer'
 
 const rootReducer = combineReducers({
 	profile: profileReducer
@@ -12,7 +12,9 @@ const rootReducer = combineReducers({
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))
 
-export type AppRootStateType = ReturnType<typeof rootReducer>
+export type ReduxRootStateType = ReturnType<typeof rootReducer>
+
+export type ThunkDispatchType = ProfileActionType
 
 // @ts-ignore
 window.store = store

@@ -1,5 +1,24 @@
+import { UniversalTextarea } from '../../common/UniversalTextarea'
+import { PostDataType } from '../../reducers/profileReducer'
 import s from './Content.module.css'
-export const Content = () => {
+import { ChangeEvent } from 'react'
+
+const Content = (props: ContentPropsType) => {
+	const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
+		props.updateTextarea(e.currentTarget.value)
+	}
+	const addPost = () => {
+		props.addPost(props.newPostText)
+	}
+
+	let posts = props.postsData.map((p) => (
+		<div className={s.posts}>
+			<div key={p.message} className={s.postBody}>
+				{p.message}
+			</div>
+		</div>
+	))
+
 	return (
 		<div className={s.contentContainer}>
 			<div className={s.profileInfo}>
@@ -26,17 +45,14 @@ export const Content = () => {
 			<div className={s.postsFriendsContainer}>
 				<div className={s.postsContainer}>
 					<div className={s.textAreaButtonBlock}>
-						<textarea
-							className={s.textarea}
-							placeholder="What's new ?"></textarea>
-						<button>Post</button>
+						<UniversalTextarea
+							onChange={onChangeHandler}
+							text={props.newPostText}
+							placeholder={"What's new?"}
+						/>
+						<button onClick={addPost}>Post</button>
 					</div>
-					<div className={s.posts}>
-						<div className={s.postBody}>
-							Lorem ipsum dolor sit amet consectetur adipisicing elit.
-							Consectetur suscipit hic placeat nostrum natus enim.
-						</div>
-					</div>
+					{posts}
 				</div>
 				<div className={s.friendsContainer}>
 					<div className={s.friends}>
@@ -47,3 +63,12 @@ export const Content = () => {
 		</div>
 	)
 }
+
+type ContentPropsType = {
+	newPostText: string
+	postsData: PostDataType[]
+	updateTextarea: (text: string) => void
+	addPost: (message: string) => void
+}
+
+export default Content
