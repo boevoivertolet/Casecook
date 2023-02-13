@@ -3,6 +3,7 @@ import { PostDataType } from '../../reducers/profileReducer'
 import s from './Content.module.css'
 import { ChangeEvent } from 'react'
 import { Post } from './Post/Post'
+import { UniversalButton } from '../../common/UniversalButton'
 
 const Content = (props: ContentPropsType) => {
 	const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -32,7 +33,7 @@ const Content = (props: ContentPropsType) => {
 						<div className={s.nameDescription}>
 							<h2>Gordon Ramsey</h2>
 							<div>Status</div>
-							<div>Description</div>
+							<div>Можно добавить пост</div>
 						</div>
 					</div>
 				</div>
@@ -45,7 +46,7 @@ const Content = (props: ContentPropsType) => {
 							text={props.newPostText}
 							placeholder={"What's new?"}
 						/>
-						<button onClick={addPost}>Post</button>
+						<UniversalButton onClick={addPost} title={'Post'} />
 					</div>
 					{posts}
 				</div>

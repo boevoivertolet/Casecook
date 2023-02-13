@@ -222,7 +222,7 @@
 	margin-bottom: 15px;
 	width: 100%;
 }
-button {
+.universalButton {
 	font-family: inherit;
 	color: #ffffff;
 	padding: 0 16px;
@@ -236,11 +236,16 @@ button {
 	font-weight: 600;
 	align-self: flex-end;
 }
-button:hover {
+.universalButton:hover {
 	background-color: #626263;
 }
-button:active {
+.universalButton:active {
 	font-size: 11px;
 	color: #bbbebd;
 	font-weight: 600;
+}
+.DeleteOutlinedIcon {
+	border-radius: 15px;
+	background: inherit;
+	margin: 5px 5px 1px 5px;
 }
