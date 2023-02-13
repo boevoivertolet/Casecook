@@ -115,6 +115,7 @@
 	align-content: flex-start;
 	align-items: flex-start;
 	margin-top: 35px;
+	width: 100%;
 }
 
 .postsContainer {
@@ -139,7 +140,7 @@
 .postBody {
 	border-radius: 15px;
 	background-color: inherit;
-	padding: 30px;
+	padding: 15px;
 }
 .friendsBody {
 	border-radius: 15px;
@@ -166,25 +167,30 @@
 	background-color: #333336;
 }
 .textarea {
-	line-height: 40px;
+	padding: 15px 15px 15px 30px;
+	box-sizing: border-box;
+	line-height: 1;
+	min-width: 313px;
+	text-align: start;
 	outline: none;
 	overflow: hidden;
 	resize: none;
-	text-indent: 30px;
-	width: 99%;
+	width: 100%;
 	border-radius: 15px;
 	border: none;
 	margin-bottom: 15px;
 	background-color: #444446;
 	height: 38px;
+	min-height: 38px;
 	color: #686869;
 	font-size: 14px;
 }
 .textAreaButtonBlock {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-end;
+	align-items: flex-start;
 	margin-bottom: 15px;
+	width: 100%;
 }
 button {
 	font-family: inherit;
@@ -198,6 +204,7 @@ button {
 	width: 60px;
 	height: 30px;
 	font-weight: 600;
+	align-self: flex-end;
 }
 button:hover {
 	background-color: #626263;
