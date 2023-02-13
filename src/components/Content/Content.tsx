@@ -2,6 +2,7 @@ import { UniversalTextarea } from '../../common/UniversalTextarea'
 import { PostDataType } from '../../reducers/profileReducer'
 import s from './Content.module.css'
 import { ChangeEvent } from 'react'
+import { Post } from './Post/Post'
 
 const Content = (props: ContentPropsType) => {
 	const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -11,13 +12,7 @@ const Content = (props: ContentPropsType) => {
 		props.addPost(props.newPostText)
 	}
 
-	let posts = props.postsData.map((p) => (
-		<div className={s.posts}>
-			<div key={p.message} className={s.postBody}>
-				{p.message}
-			</div>
-		</div>
-	))
+	let posts = props.postsData.map((p) => <Post key={p.postId} postData={p} />)
 
 	return (
 		<div className={s.contentContainer}>

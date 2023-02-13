@@ -138,10 +138,40 @@
 	background-color: #333336;
 }
 .postBody {
+	max-height: auto;
+	min-height: 30px;
 	border-radius: 15px;
 	background-color: inherit;
 	padding: 15px;
 }
+
+.postUserBlock {
+	border-radius: 15px;
+	background: inherit;
+	display: flex;
+	width: 40px;
+	height: 40px;
+}
+.postUser {
+	background: inherit;
+	margin: 8px;
+}
+.userAva {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.postUserName {
+	white-space: nowrap;
+	width: auto;
+	height: 20px;
+	margin: 8px;
+	background-color: inherit;
+	font-size: 13px;
+	font-weight: 600;
+	color: #ffffff;
+}
+
 .friendsBody {
 	border-radius: 15px;
 	background-color: inherit;

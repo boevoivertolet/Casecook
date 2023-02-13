@@ -15,7 +15,10 @@ const profileReducer = (
 		case 'ADD-POST':
 			let newPost = {
 				postId: Number(v1()),
-				message: action.message
+				message: action.message,
+				userAva:
+					'https://resizing.flixster.com/U7jLXZqIWp875Z4soUg1704DT78=/300x300/v2/https://flxt.tmsimg.com/assets/p13001485_i_h9_aa.jpg',
+				userName: 'Gordon Ramsey'
 			}
 			return {
 				...state,
@@ -56,7 +59,9 @@ type InitialProfileStateType = {
 
 export type PostDataType = {
 	postId: number
-	message: string | null
+	message: string
+	userAva: string
+	userName: string
 }
 
 export default profileReducer
