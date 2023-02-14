@@ -5,22 +5,22 @@ export const Sidebar = () => {
 		<div className={s.sidebar}>
 			<div className={s.sidebarLinks}>
 				<div className={s.sidebarNav}>
-					<NavLink to='/casecook/my-profile'>My profile</NavLink>
+					<NavLink to='/my-profile'>My profile</NavLink>
 				</div>
 				<div className={s.sidebarNav}>
-					<NavLink to='/casecook/news'>News</NavLink>
+					<NavLink to='/news'>News</NavLink>
 				</div>
 				<div className={s.sidebarNav}>
-					<NavLink to='/casecook/messenger'>Messenger</NavLink>
+					<NavLink to='/messenger'>Messenger</NavLink>
 				</div>
 				<div className={s.sidebarNav}>
-					<NavLink to='/casecook/friends'>Friends</NavLink>
+					<NavLink to='/friends'>Friends</NavLink>
 				</div>
 				<div className={s.sidebarNav}>
-					<NavLink to='/casecook/music'>Music</NavLink>
+					<NavLink to='/music'>Music</NavLink>
 				</div>
 				<div className={s.sidebarNav}>
-					<NavLink to='/casecook/settings'>Settings</NavLink>
+					<NavLink to='/settings'>Settings</NavLink>
 				</div>
 			</div>
 		</div>
