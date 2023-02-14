@@ -20,17 +20,17 @@ export const App = () => {
 			</div>
 			<div className={s.content}>
 				<Routes>
-					<Route path='/my-profile' element={<ContentContainer />} />
+					<Route path='my-profile' element={<ContentContainer />} />
 
-					<Route path='/news' element={<NewsContainer />} />
+					<Route path='news' element={<NewsContainer />} />
 
-					<Route path='/messenger' element={<MessengerContainer />} />
+					<Route path='messenger' element={<MessengerContainer />} />
 
-					<Route path='/music' element={<MusicContainer />} />
+					<Route path='music' element={<MusicContainer />} />
 
-					<Route path='/friends' element={<FriendsContainer />} />
+					<Route path='friends' element={<FriendsContainer />} />
 
-					<Route path='/settings' element={<SettingsContainer />} />
+					<Route path='settings' element={<SettingsContainer />} />
 				</Routes>
 			</div>
 		</div>
