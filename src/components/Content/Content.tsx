@@ -1,7 +1,7 @@
 import { UniversalTextarea } from '../../common/UniversalTextarea'
 import { PostDataType } from '../../reducers/profileReducer'
 import s from './Content.module.css'
-import { ChangeEvent, useState } from 'react'
+import { ChangeEvent } from 'react'
 import { Post } from './Post/Post'
 import { UniversalButton } from '../../common/UniversalButton'
 
