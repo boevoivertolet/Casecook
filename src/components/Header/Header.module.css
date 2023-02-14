@@ -63,3 +63,7 @@
 	color: rgb(255, 255, 255);
 	font-family: Verdana, Geneva, sans-serif;
 }
+.time {
+	background: inherit;
+	margin-right: 20px;
+}

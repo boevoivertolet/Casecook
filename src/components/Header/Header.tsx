@@ -1,3 +1,4 @@
+import moment from 'moment'
 import s from './Header.module.css'
 export const Header = () => {
 	return (
@@ -10,6 +11,7 @@ export const Header = () => {
 				/>
 				<span>Casecook</span>
 			</div>
+			<div className={s.time}>{'time'}</div>
 		</div>
 	)
 }
