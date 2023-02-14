@@ -13,7 +13,9 @@ const Content = (props: ContentPropsType) => {
 		props.addPost(props.newPostText)
 	}
 
-	let posts = props.postsData.map((p) => <Post key={p.postId} postData={p} />)
+	let posts = props.postData.map((p) => (
+		<Post key={p.postId} postData={p} deletePost={props.deletePost} />
+	))
 
 	return (
 		<div className={s.contentContainer}>
@@ -62,9 +64,10 @@ const Content = (props: ContentPropsType) => {
 
 type ContentPropsType = {
 	newPostText: string
-	postsData: PostDataType[]
+	postData: PostDataType[]
 	updateTextarea: (text: string) => void
 	addPost: (message: string) => void
+	deletePost: (postId: number) => void
 }
 
 export default Content

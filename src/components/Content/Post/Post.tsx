@@ -5,6 +5,9 @@ import s from '../Content.module.css'
 
 export const Post = (props: PostType) => {
 	const [dateTime, setDateTime] = useState(Date().slice(0, 25))
+	const deletePost = () => {
+		props.deletePost(props.postData.postId)
+	}
 	return (
 		<div className={s.posts}>
 			<div className={s.postUserBlock}>
@@ -22,9 +25,7 @@ export const Post = (props: PostType) => {
 			</div>
 			<div className={s.postBody}>{props.postData.message}</div>
 			<DeleteOutlinedIcon
-				onClick={() => {
-					alert('post deleted')
-				}}
+				onClick={deletePost}
 				className={s.DeleteOutlinedIcon}></DeleteOutlinedIcon>
 		</div>
 	)
@@ -32,4 +33,5 @@ export const Post = (props: PostType) => {
 
 type PostType = {
 	postData: PostDataType
+	deletePost: (postId: number) => void
 }

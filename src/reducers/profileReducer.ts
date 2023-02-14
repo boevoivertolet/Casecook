@@ -1,4 +1,3 @@
-import { v1 } from 'uuid'
 import { Dispatch } from 'redux'
 import { ThunkDispatchType } from '../store'
 
@@ -14,12 +13,14 @@ const profileReducer = (
 	switch (action.type) {
 		case 'ADD-POST':
 			let newPost = {
-				postId: Number(v1()),
+				postId: Date.now(),
 				message: action.message,
 				userAva:
 					'https://resizing.flixster.com/U7jLXZqIWp875Z4soUg1704DT78=/300x300/v2/https://flxt.tmsimg.com/assets/p13001485_i_h9_aa.jpg',
 				userName: 'Gordon Ramsey'
 			}
+			console.log(newPost)
+
 			return {
 				...state,
 				postData: [newPost, ...state.postData],
@@ -27,6 +28,12 @@ const profileReducer = (
 			}
 		case 'UPDATE-TEXTAREA':
 			return { ...state, newPostText: action.newPostText }
+		case 'DELETE-POST':
+			return {
+				...state,
+				postData: state.postData.filter((el) => el.postId !== action.postId)
+			}
+
 		default:
 			return { ...state }
 	}
@@ -36,11 +43,18 @@ const updateTextareaAC = (newPostText: string) =>
 	({ type: 'UPDATE-TEXTAREA', newPostText } as const)
 
 const addPostAC = (message: string) => ({ type: 'ADD-POST', message } as const)
+const deletePostAC = (postId: number) => {
+	return { type: 'DELETE-POST', postId } as const
+}
 
 //ActionsTypes
 type UpdateTextareaACType = ReturnType<typeof updateTextareaAC>
 type AddPostACType = ReturnType<typeof addPostAC>
-export type ProfileActionType = UpdateTextareaACType | AddPostACType
+type DeletePostACType = ReturnType<typeof deletePostAC>
+export type ProfileActionType =
+	| UpdateTextareaACType
+	| AddPostACType
+	| DeletePostACType
 
 //Thunks
 export const updateTextarea =
@@ -50,6 +64,11 @@ export const updateTextarea =
 export const addPost =
 	(message: string) => (dispatch: Dispatch<ThunkDispatchType>) => {
 		dispatch(addPostAC(message))
+	}
+export const deletePost =
+	(postId: number) => (dispatch: Dispatch<ThunkDispatchType>) => {
+		console.log(postId)
+		dispatch(deletePostAC(postId))
 	}
 
 type InitialProfileStateType = {

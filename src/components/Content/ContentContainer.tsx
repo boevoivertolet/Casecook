@@ -1,5 +1,9 @@
 import React from 'react'
-import { updateTextarea, addPost } from '../../reducers/profileReducer'
+import {
+	updateTextarea,
+	addPost,
+	deletePost
+} from '../../reducers/profileReducer'
 import { connect } from 'react-redux'
 import { PostDataType } from '../../reducers/profileReducer'
 import { ReduxRootStateType } from '../../store'
@@ -9,10 +13,11 @@ class ContentContainer extends React.Component<ContentContainerType> {
 	render() {
 		return (
 			<Content
-				postsData={this.props.postData}
+				postData={this.props.postData}
 				newPostText={this.props.newPostText}
 				updateTextarea={this.props.updateTextarea}
 				addPost={this.props.addPost}
+				deletePost={this.props.deletePost}
 			/>
 		)
 	}
@@ -33,11 +38,14 @@ type ContentMapStateToPropsType = {
 type ContentMapDispatchToPropsType = {
 	updateTextarea: (text: string) => void
 	addPost: (message: string) => void
+	deletePost: (postId: number) => void
 }
 
 type ContentContainerType = ContentMapStateToPropsType &
 	ContentMapDispatchToPropsType
 
-export default connect(mapStateToProps, { updateTextarea, addPost })(
-	ContentContainer
-)
+export default connect(mapStateToProps, {
+	updateTextarea,
+	addPost,
+	deletePost
+})(ContentContainer)
