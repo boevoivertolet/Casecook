@@ -20,17 +20,26 @@ export const App = () => {
 			</div>
 			<div className={s.content}>
 				<Routes>
-					<Route path='/my-profile' element={<ContentContainer />} />
+					<Route
+						path='/casecook/my-profile'
+						element={<ContentContainer />}
+					/>
 
-					<Route path='/news' element={<NewsContainer />} />
+					<Route path='/casecook/news' element={<NewsContainer />} />
 
-					<Route path='/messenger' element={<MessengerContainer />} />
+					<Route
+						path='/casecook/messenger'
+						element={<MessengerContainer />}
+					/>
 
-					<Route path='/music' element={<MusicContainer />} />
+					<Route path='/casecook/music' element={<MusicContainer />} />
 
-					<Route path='/friends' element={<FriendsContainer />} />
+					<Route path='/casecook/friends' element={<FriendsContainer />} />
 
-					<Route path='/settings' element={<SettingsContainer />} />
+					<Route
+						path='/casecook/settings'
+						element={<SettingsContainer />}
+					/>
 				</Routes>
 			</div>
 		</div>
