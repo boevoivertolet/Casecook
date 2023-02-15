@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/casecook/static/css/main.ebc50f84.css",
-    "main.js": "/casecook/static/js/main.34be808f.js",
+    "main.css": "/casecook/static/css/main.86894db2.css",
+    "main.js": "/casecook/static/js/main.347787d9.js",
     "index.html": "/casecook/index.html",
-    "main.ebc50f84.css.map": "/casecook/static/css/main.ebc50f84.css.map",
-    "main.34be808f.js.map": "/casecook/static/js/main.34be808f.js.map"
+    "main.86894db2.css.map": "/casecook/static/css/main.86894db2.css.map",
+    "main.347787d9.js.map": "/casecook/static/js/main.347787d9.js.map"
   },
   "entrypoints": [
-    "static/css/main.ebc50f84.css",
-    "static/js/main.34be808f.js"
+    "static/css/main.86894db2.css",
+    "static/js/main.347787d9.js"
   ]
 }
