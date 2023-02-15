@@ -7,7 +7,7 @@ let mapStateToPropsForRedirect = (
 	state: ReduxRootStateType
 ): MapStateToPropsForRedirectType => {
 	return {
-		isAuth: state.auth.isAuth
+		isAuth: state.auth.data.isAuth
 	}
 }
 

@@ -33,7 +33,7 @@ const mapStateToProps = (
 	return {
 		postData: state.profile.postData,
 		newPostText: state.profile.newPostText,
-		authUser: state.auth
+		authUser: state.auth.data
 	}
 }
 type ContentMapStateToPropsType = {

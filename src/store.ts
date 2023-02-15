@@ -9,11 +9,13 @@ import thunk from 'redux-thunk'
 import authReducer, { AuthActionType } from './reducers/authReducer'
 import profileReducer from './reducers/profileReducer'
 import commonReducer, { CommonActionType } from './reducers/commonReducer'
+import usersReducer, { UsersActionType } from './reducers/usersReducer'
 
 const rootReducer = combineReducers({
 	profile: profileReducer,
 	auth: authReducer,
-	common: commonReducer
+	common: commonReducer,
+	users: usersReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))
@@ -24,6 +26,7 @@ export type ThunkDispatchType =
 	| ProfileActionType
 	| AuthActionType
 	| CommonActionType
+	| UsersActionType
 
 // @ts-ignore
 window.store = store

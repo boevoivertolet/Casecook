@@ -4,10 +4,15 @@ import { authAPI } from '../api/api'
 import { setIsFetchingAC } from './commonReducer'
 
 let initialState: InitialAuthStateType = {
-	id: null,
-	email: null,
-	login: null,
-	isAuth: false
+	data: {
+		id: null,
+		login: null,
+		email: null,
+		isAuth: false
+	},
+	messages: [],
+	fieldsErrors: [],
+	resultCode: 0
 }
 
 const authReducer = (
@@ -18,8 +23,7 @@ const authReducer = (
 		case 'SET-USER-DATA':
 			return {
 				...state,
-				...action.payload,
-				isAuth: true
+				data: action.payload
 			}
 
 		default:
@@ -79,10 +83,10 @@ export type AuthUserType = {
 	isAuth: boolean
 }
 type InitialAuthStateType = {
-	id: number | null
-	email: string | null
-	login: string | null
-	isAuth: boolean
+	data: AuthUserType
+	messages: Array<string>
+	fieldsErrors: Array<string>
+	resultCode: number
 }
 
 type SetAuthUserDataACType = ReturnType<typeof setAuthUserDataAC>

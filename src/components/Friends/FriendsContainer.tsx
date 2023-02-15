@@ -1,10 +1,20 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import {
+	getUsers,
+	InitialUsersStateType,
+	UsersItemsType
+} from '../../reducers/usersReducer'
 import { ReduxRootStateType } from '../../store'
 import { Friends } from './Friends'
 
 class FriendsContainer extends React.Component<FriendsContainerType> {
-	componentDidMount() {}
+	componentDidMount() {
+		this.props.getUsers(
+			this.props.users.currentPage,
+			this.props.users.pageSize
+		)
+	}
 
 	render() {
 		return <Friends {...this.props} />
@@ -14,10 +24,16 @@ class FriendsContainer extends React.Component<FriendsContainerType> {
 const mapStateToProps = (
 	state: ReduxRootStateType
 ): FriendsMapStateToPropsType => {
-	return {}
+	return {
+		users: state.users
+	}
 }
-type FriendsMapStateToPropsType = {}
-type FriendsMapDispatchToPropsType = {}
+type FriendsMapStateToPropsType = {
+	users: InitialUsersStateType
+}
+type FriendsMapDispatchToPropsType = {
+	getUsers: (currentPage: number, pageSize: number) => void
+}
 type FriendsContainerType = FriendsMapDispatchToPropsType &
 	FriendsMapStateToPropsType
-export default connect(mapStateToProps, {})(FriendsContainer)
+export default connect(mapStateToProps, { getUsers })(FriendsContainer)

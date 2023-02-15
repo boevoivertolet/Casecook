@@ -9,10 +9,10 @@ export const DigitalClockView: React.FC<ClockViewPropsType> = ({ date }) => {
 
 	return (
 		<div className={s.time}>
+			<span className={s.date}>{Date().slice(0, 10)}</span>
 			<span className={s.time}>{hoursString}</span>:
 			<span className={s.time}>{minString}</span>:
 			<span className={s.time}>{secondsString}</span>
-			<span className={s.date}>{Date().slice(0, 10)}</span>
 		</div>
 	)
 }

@@ -231,9 +231,10 @@
 	width: 100%;
 }
 .universalButton {
+	box-sizing: content-box;
 	font-family: inherit;
 	color: #ffffff;
-	padding: 0 16px;
+	padding: 1px 1px 6px 1px;
 	border-radius: 9px;
 	vertical-align: middle;
 	font-size: 13px;

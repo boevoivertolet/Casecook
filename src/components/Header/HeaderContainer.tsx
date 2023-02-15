@@ -18,7 +18,7 @@ const mapStateToProps = (
 	state: ReduxRootStateType
 ): HeaderMapStateToPropsType => {
 	return {
-		authUser: state.auth
+		authUser: state.auth.data
 	}
 }
 type HeaderMapStateToPropsType = {
