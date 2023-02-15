@@ -1,5 +1,7 @@
+import { NavLink } from 'react-router-dom'
+import { UserType } from '../../reducers/authReducer'
 import s from './Header.module.css'
-export const Header = () => {
+export const Header = (props: HeaderPropsType) => {
 	return (
 		<div className={s.header}>
 			<div className={s.logoBlock}>
@@ -11,6 +13,17 @@ export const Header = () => {
 				<span>Casecook</span>
 			</div>
 			<div className={s.time}>{'time'}</div>
+			<div className={s.loginName}>
+				{props.user.login ? (
+					props.user.login
+				) : (
+					<NavLink to={'/login'}>Login</NavLink>
+				)}
+			</div>
 		</div>
 	)
+}
+
+type HeaderPropsType = {
+	user: UserType
 }

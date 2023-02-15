@@ -18,7 +18,6 @@ const mapStateToProps = (
 }
 type FriendsMapStateToPropsType = {}
 type FriendsMapDispatchToPropsType = {}
-type FriendsContainerType =
-	| FriendsMapDispatchToPropsType
-	| FriendsMapStateToPropsType
+type FriendsContainerType = FriendsMapDispatchToPropsType &
+	FriendsMapStateToPropsType
 export default connect(mapStateToProps, {})(FriendsContainer)

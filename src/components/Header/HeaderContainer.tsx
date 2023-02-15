@@ -2,9 +2,12 @@ import React from 'react'
 import { Header } from './Header'
 import { connect } from 'react-redux'
 import { ReduxRootStateType } from '../../store'
+import { getAuthUserData, UserType } from '../../reducers/authReducer'
 
 class HeaderContainer extends React.Component<HeaderContainerType> {
-	componentDidMount() {}
+	componentDidMount() {
+		this.props.getAuthUserData()
+	}
 
 	render() {
 		return <Header {...this.props} />
@@ -14,11 +17,16 @@ class HeaderContainer extends React.Component<HeaderContainerType> {
 const mapStateToProps = (
 	state: ReduxRootStateType
 ): HeaderMapStateToPropsType => {
-	return {}
+	return {
+		user: state.auth
+	}
 }
-type HeaderMapStateToPropsType = {}
-type HeaderMapDispatchToPropsType = {}
-type HeaderContainerType =
-	| HeaderMapDispatchToPropsType
-	| HeaderMapStateToPropsType
-export default connect(mapStateToProps, {})(HeaderContainer)
+type HeaderMapStateToPropsType = {
+	user: UserType
+}
+type HeaderMapDispatchToPropsType = {
+	getAuthUserData: () => void
+}
+type HeaderContainerType = HeaderMapDispatchToPropsType &
+	HeaderMapStateToPropsType
+export default connect(mapStateToProps, { getAuthUserData })(HeaderContainer)

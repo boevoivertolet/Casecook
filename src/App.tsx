@@ -8,6 +8,7 @@ import NewsContainer from './components/News/NewsContainer'
 import MusicContainer from './components/Music/MusicContainer'
 import SettingsContainer from './components/Settings/SettingsContainer'
 import FriendsContainer from './components/Friends/FriendsContainer'
+import LoginContainer from './components/Login/LoginContainer'
 
 export const App = () => {
 	return (
@@ -31,6 +32,8 @@ export const App = () => {
 					<Route path='/friends' element={<FriendsContainer />} />
 
 					<Route path='/settings' element={<SettingsContainer />} />
+
+					<Route path='/login' element={<LoginContainer />} />
 				</Routes>
 			</div>
 		</div>

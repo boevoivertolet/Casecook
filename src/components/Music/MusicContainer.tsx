@@ -18,5 +18,5 @@ const mapStateToProps = (
 }
 type MusicMapStateToPropsType = {}
 type MusicMapDispatchToPropsType = {}
-type MusicContainerType = MusicMapDispatchToPropsType | MusicMapStateToPropsType
+type MusicContainerType = MusicMapDispatchToPropsType & MusicMapStateToPropsType
 export default connect(mapStateToProps, {})(MusicContainer)

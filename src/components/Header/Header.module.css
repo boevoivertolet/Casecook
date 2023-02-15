@@ -67,3 +67,18 @@
 	background: inherit;
 	margin-right: 20px;
 }
+.loginName {
+	background: inherit;
+	margin-right: 15px;
+	color: #ffffff;
+}
+.loginName a {
+	background: inherit;
+	text-decoration: none;
+	color: #ffffff;
+}
+.loginName a:hover {
+	background: inherit;
+	text-decoration: none;
+	color: #ffffff;
+}

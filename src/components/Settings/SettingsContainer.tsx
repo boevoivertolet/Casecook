@@ -18,7 +18,6 @@ const mapStateToProps = (
 }
 type SettingsMapStateToPropsType = {}
 type SettingsMapDispatchToPropsType = {}
-type SettingsContainerType =
-	| SettingsMapDispatchToPropsType
-	| SettingsMapStateToPropsType
+type SettingsContainerType = SettingsMapDispatchToPropsType &
+	SettingsMapStateToPropsType
 export default connect(mapStateToProps, {})(SettingsContainer)

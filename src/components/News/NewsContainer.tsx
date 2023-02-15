@@ -18,5 +18,5 @@ const mapStateToProps = (
 }
 type NewsMapStateToPropsType = {}
 type NewsMapDispatchToPropsType = {}
-type NewsContainerType = NewsMapDispatchToPropsType | NewsMapStateToPropsType
+type NewsContainerType = NewsMapDispatchToPropsType & NewsMapStateToPropsType
 export default connect(mapStateToProps, {})(NewsContainer)

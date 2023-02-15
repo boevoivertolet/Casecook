@@ -18,7 +18,6 @@ const mapStateToProps = (
 }
 type MessengerMapStateToPropsType = {}
 type MessengerMapDispatchToPropsType = {}
-type MessengerContainerType =
-	| MessengerMapDispatchToPropsType
-	| MessengerMapStateToPropsType
+type MessengerContainerType = MessengerMapDispatchToPropsType &
+	MessengerMapStateToPropsType
 export default connect(mapStateToProps, {})(MessengerContainer)

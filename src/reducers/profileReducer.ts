@@ -48,13 +48,6 @@ const deletePostAC = (postId: number) => {
 }
 
 //ActionsTypes
-type UpdateTextareaACType = ReturnType<typeof updateTextareaAC>
-type AddPostACType = ReturnType<typeof addPostAC>
-type DeletePostACType = ReturnType<typeof deletePostAC>
-export type ProfileActionType =
-	| UpdateTextareaACType
-	| AddPostACType
-	| DeletePostACType
 
 //Thunks
 export const updateTextarea =
@@ -82,5 +75,13 @@ export type PostDataType = {
 	userAva: string
 	userName: string
 }
+
+type UpdateTextareaACType = ReturnType<typeof updateTextareaAC>
+type AddPostACType = ReturnType<typeof addPostAC>
+type DeletePostACType = ReturnType<typeof deletePostAC>
+export type ProfileActionType =
+	| UpdateTextareaACType
+	| AddPostACType
+	| DeletePostACType
 
 export default profileReducer

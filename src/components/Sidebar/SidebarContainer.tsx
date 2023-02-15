@@ -18,7 +18,6 @@ const mapStateToProps = (
 }
 type HeaderMapStateToPropsType = {}
 type HeaderMapDispatchToPropsType = {}
-type SidebarContainerType =
-	| HeaderMapDispatchToPropsType
-	| HeaderMapStateToPropsType
+type SidebarContainerType = HeaderMapDispatchToPropsType &
+	HeaderMapStateToPropsType
 export default connect(mapStateToProps, {})(SidebarContainer)

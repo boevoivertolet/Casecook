@@ -8,11 +8,15 @@ import { connect } from 'react-redux'
 import { PostDataType } from '../../reducers/profileReducer'
 import { ReduxRootStateType } from '../../store'
 import Content from './Content'
+import { UserType } from '../../reducers/authReducer'
 
 class ContentContainer extends React.Component<ContentContainerType> {
+	componentDidMount(): void {}
+
 	render() {
 		return (
 			<Content
+				user={this.props.user}
 				postData={this.props.postData}
 				newPostText={this.props.newPostText}
 				updateTextarea={this.props.updateTextarea}
@@ -28,12 +32,14 @@ const mapStateToProps = (
 ): ContentMapStateToPropsType => {
 	return {
 		postData: state.profile.postData,
-		newPostText: state.profile.newPostText
+		newPostText: state.profile.newPostText,
+		user: state.auth
 	}
 }
 type ContentMapStateToPropsType = {
 	postData: PostDataType[]
 	newPostText: string
+	user: UserType
 }
 type ContentMapDispatchToPropsType = {
 	updateTextarea: (text: string) => void
