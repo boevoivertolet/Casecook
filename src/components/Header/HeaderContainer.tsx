@@ -2,7 +2,7 @@ import React from 'react'
 import { Header } from './Header'
 import { connect } from 'react-redux'
 import { ReduxRootStateType } from '../../store'
-import { getAuthUserData, UserType } from '../../reducers/authReducer'
+import { AuthUserType, getAuthUserData } from '../../reducers/authReducer'
 
 class HeaderContainer extends React.Component<HeaderContainerType> {
 	componentDidMount() {
@@ -18,11 +18,11 @@ const mapStateToProps = (
 	state: ReduxRootStateType
 ): HeaderMapStateToPropsType => {
 	return {
-		user: state.auth
+		authUser: state.auth
 	}
 }
 type HeaderMapStateToPropsType = {
-	user: UserType
+	authUser: AuthUserType
 }
 type HeaderMapDispatchToPropsType = {
 	getAuthUserData: () => void

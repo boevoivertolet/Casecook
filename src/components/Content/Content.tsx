@@ -4,7 +4,7 @@ import s from './Content.module.css'
 import { ChangeEvent } from 'react'
 import { Post } from './Post/Post'
 import { UniversalButton } from '../../common/UniversalButton'
-import { UserType } from '../../reducers/authReducer'
+import { AuthUserType } from '../../reducers/authReducer'
 
 const Content = (props: ContentPropsType) => {
 	const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
@@ -64,7 +64,7 @@ const Content = (props: ContentPropsType) => {
 }
 
 type ContentPropsType = {
-	user: UserType
+	authUser: AuthUserType
 	newPostText: string
 	postData: PostDataType[]
 	updateTextarea: (text: string) => void

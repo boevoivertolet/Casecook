@@ -1,5 +1,8 @@
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { UserType } from '../../reducers/authReducer'
+import { Clock } from '../../features/Clock/Clock'
+
+import { AuthUserType } from '../../reducers/authReducer'
 import s from './Header.module.css'
 export const Header = (props: HeaderPropsType) => {
 	return (
@@ -12,10 +15,12 @@ export const Header = (props: HeaderPropsType) => {
 				/>
 				<span>Casecook</span>
 			</div>
-			<div className={s.time}>{'time'}</div>
+			<div className={s.time}>
+				<Clock />
+			</div>
 			<div className={s.loginName}>
-				{props.user.login ? (
-					props.user.login
+				{props.authUser.login ? (
+					props.authUser.login
 				) : (
 					<NavLink to={'/login'}>Login</NavLink>
 				)}
@@ -25,5 +30,5 @@ export const Header = (props: HeaderPropsType) => {
 }
 
 type HeaderPropsType = {
-	user: UserType
+	authUser: AuthUserType
 }

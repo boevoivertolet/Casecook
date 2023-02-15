@@ -72,7 +72,7 @@ export const getAuthUserData =
 // }
 //Types
 
-export type UserType = {
+export type AuthUserType = {
 	id: number | null
 	email: string | null
 	login: string | null
