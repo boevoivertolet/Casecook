@@ -4,10 +4,10 @@ import { setIsFetchingAC } from './commonReducer'
 
 let initialState: InitialUsersStateType = {
 	items: [],
-	totalCount: 100,
+	totalCount: 500,
 	error: null,
-	pageSize: 10,
-	currentPage: 3,
+	pageSize: 100,
+	currentPage: 1,
 	followingInProgress: []
 }
 

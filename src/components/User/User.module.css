@@ -39,3 +39,24 @@
 	width: 280px;
 	background: inherit;
 }
+.pagination {
+	display: flex;
+	justify-content: space-between;
+	align-self: center;
+	text-align: center;
+	background: inherit;
+	color: white;
+	font-size: 15px;
+	width: 100px;
+	height: 30px;
+}
+
+.pagination span {
+	vertical-align: middle;
+	background: inherit;
+	margin: 3px;
+}
+
+.pagination span:active {
+	font-weight: 900;
+}

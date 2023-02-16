@@ -68,6 +68,9 @@
 	margin-right: 20px;
 }
 .loginName {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 	background: inherit;
 	margin-right: 15px;
 	color: #ffffff;
@@ -82,4 +85,9 @@
 	background: inherit;
 	text-decoration: none;
 	color: #ffffff;
+}
+.loginName img {
+	margin-right: 10px;
+	width: 30px;
+	border-radius: 50px;
 }

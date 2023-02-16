@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Pagination } from '../../common/Paginateion'
 import { UniversalButton } from '../../common/UniversalButton'
 import { InitialUsersStateType } from '../../reducers/usersReducer'
 import { User } from '../User/User'
@@ -10,7 +11,9 @@ export const Friends = (props: FriendsPropsType) => {
 		<User {...props} key={u.id} user={u} />
 	)) // User
 	let followedUsers = props.users.items.map((u) =>
-		u.followed ? <User {...props} key={u.id} user={u} /> : null
+		u.followed && u.photos.large ? (
+			<User {...props} key={u.id} user={u} />
+		) : null
 	) // User
 
 	function changeViewMode() {
@@ -18,6 +21,7 @@ export const Friends = (props: FriendsPropsType) => {
 	}
 	return (
 		<div className={s.friendsContainer}>
+			<Pagination />
 			<UniversalButton
 				onClick={changeViewMode}
 				title={mode ? 'All users' : 'Friends'}

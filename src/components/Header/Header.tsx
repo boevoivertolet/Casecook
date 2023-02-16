@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import userPhoto from '../../assets/userphoto/user.jpeg'
+
 import { NavLink } from 'react-router-dom'
 import { Clock } from '../../features/Clock/Clock'
 
@@ -19,6 +20,7 @@ export const Header = (props: HeaderPropsType) => {
 				<Clock />
 			</div>
 			<div className={s.loginName}>
+				<img src={userPhoto} alt='#' />
 				{props.authUser.login ? (
 					props.authUser.login
 				) : (
