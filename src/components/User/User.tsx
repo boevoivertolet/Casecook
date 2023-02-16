@@ -3,6 +3,14 @@ import s from './User.module.css'
 import userPhoto from '../../assets/userphoto/user.jpeg'
 import { UniversalButton } from '../../common/UniversalButton'
 export const User = (props: UserPropsType) => {
+	function followUnfollow() {
+		if (props.user.followed) {
+			props.unFollow(props.user.id)
+		} else {
+			props.follow(props.user.id)
+		}
+	}
+
 	return (
 		<div className={s.userBlock}>
 			<div className={s.imgBlock}>
@@ -19,9 +27,7 @@ export const User = (props: UserPropsType) => {
 				<div>{props.user.status}</div>
 				<UniversalButton
 					title={props.user.followed ? 'unfollow' : 'follow'}
-					onClick={() => {
-						alert('followed')
-					}}
+					onClick={followUnfollow}
 				/>
 			</div>
 		</div>
@@ -29,4 +35,9 @@ export const User = (props: UserPropsType) => {
 }
 type UserPropsType = {
 	user: UsersItemsType
+	follow: (userId: string) => void
+	unFollow: (userId: string) => void
+	setCurrentPage: (currentPage: number) => void
+	setIsFollowingProgress: (isFetching: boolean, userId: string) => void
+	getUsers: (currentPage: number, pageSize: number) => void
 }

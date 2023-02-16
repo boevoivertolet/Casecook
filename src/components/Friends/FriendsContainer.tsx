@@ -3,7 +3,10 @@ import { connect } from 'react-redux'
 import {
 	getUsers,
 	InitialUsersStateType,
-	UsersItemsType
+	follow,
+	unFollow,
+	setCurrentPage,
+	setIsFollowingProgress
 } from '../../reducers/usersReducer'
 import { ReduxRootStateType } from '../../store'
 import { Friends } from './Friends'
@@ -32,8 +35,18 @@ type FriendsMapStateToPropsType = {
 	users: InitialUsersStateType
 }
 type FriendsMapDispatchToPropsType = {
+	follow: (userId: string) => void
+	unFollow: (userId: string) => void
+	setCurrentPage: (currentPage: number) => void
+	setIsFollowingProgress: (isFetching: boolean, userId: string) => void
 	getUsers: (currentPage: number, pageSize: number) => void
 }
 type FriendsContainerType = FriendsMapDispatchToPropsType &
 	FriendsMapStateToPropsType
-export default connect(mapStateToProps, { getUsers })(FriendsContainer)
+export default connect(mapStateToProps, {
+	follow,
+	unFollow,
+	setCurrentPage,
+	setIsFollowingProgress,
+	getUsers
+})(FriendsContainer)
