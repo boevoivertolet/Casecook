@@ -60,7 +60,6 @@ export const addPost =
 	}
 export const deletePost =
 	(postId: number) => (dispatch: Dispatch<ThunkDispatchType>) => {
-		console.log(postId)
 		dispatch(deletePostAC(postId))
 	}
 

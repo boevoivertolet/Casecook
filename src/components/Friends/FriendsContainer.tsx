@@ -10,6 +10,8 @@ import {
 } from '../../reducers/usersReducer'
 import { ReduxRootStateType } from '../../store'
 import { Friends } from './Friends'
+import { setIsFetchingAC } from '../../reducers/commonReducer'
+import { Preloader } from '../../common/Preloader'
 
 class FriendsContainer extends React.Component<FriendsContainerType> {
 	componentDidMount() {
@@ -20,7 +22,12 @@ class FriendsContainer extends React.Component<FriendsContainerType> {
 	}
 
 	render() {
-		return <Friends {...this.props} />
+		return (
+			<>
+				{this.props.isFetching ? <Preloader /> : null}
+				<Friends {...this.props} />
+			</>
+		)
 	}
 }
 
@@ -31,7 +38,8 @@ const mapStateToProps = (
 		users: state.users,
 		pageSize: state.users.pageSize,
 		totalCount: state.users.totalCount,
-		currentPage: state.users.currentPage
+		currentPage: state.users.currentPage,
+		isFetching: state.common.isFetching
 	}
 }
 type FriendsMapStateToPropsType = {
@@ -39,6 +47,7 @@ type FriendsMapStateToPropsType = {
 	pageSize: number
 	totalCount: number
 	currentPage: number
+	isFetching: boolean
 }
 type FriendsMapDispatchToPropsType = {
 	follow: (userId: string) => void
@@ -54,5 +63,6 @@ export default connect(mapStateToProps, {
 	unFollow,
 	setCurrentPage,
 	setIsFollowingProgress,
-	getUsers
+	getUsers,
+	setIsFetchingAC
 })(FriendsContainer)

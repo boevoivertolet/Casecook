@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { UniversalButton } from '../../common/UniversalButton'
 import { InitialUsersStateType } from '../../reducers/usersReducer'
 import { User } from '../User/User'
@@ -35,6 +36,7 @@ type FriendsPropsType = {
 	pageSize: number
 	totalCount: number
 	currentPage: number
+	isFetching: boolean
 	follow: (userId: string) => void
 	unFollow: (userId: string) => void
 	setCurrentPage: (currentPage: number) => void

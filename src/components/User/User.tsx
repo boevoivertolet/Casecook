@@ -26,6 +26,7 @@ export const User = (props: UserPropsType) => {
 				<div className={s.userName}>{props.user.name}</div>
 				<div>{props.user.status}</div>
 				<UniversalButton
+					disabled={props.isFetching}
 					title={props.user.followed ? 'unfollow' : 'follow'}
 					onClick={followUnfollow}
 				/>
@@ -35,6 +36,7 @@ export const User = (props: UserPropsType) => {
 }
 type UserPropsType = {
 	user: UsersItemsType
+	isFetching: boolean
 	follow: (userId: string) => void
 	unFollow: (userId: string) => void
 	setCurrentPage: (currentPage: number) => void

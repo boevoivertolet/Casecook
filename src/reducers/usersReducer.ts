@@ -90,23 +90,23 @@ export const getUsers = (page: number, pageSize: number) => {
 }
 export const follow = (userId: string) => {
 	return (dispatch: Dispatch) => {
-		dispatch(setIsFollowingProgress(true, userId))
+		dispatch(setIsFetchingAC(true))
 		usersAPI.postFollow(userId).then((data) => {
 			if (data.resultCode === 0) {
 				dispatch(acceptFollow(userId))
 			}
-			dispatch(setIsFollowingProgress(false, userId))
+			dispatch(setIsFetchingAC(false))
 		})
 	}
 }
 export const unFollow = (userId: string) => {
 	return (dispatch: Dispatch) => {
-		dispatch(setIsFollowingProgress(true, userId))
+		dispatch(setIsFetchingAC(true))
 		usersAPI.deleteFollow(userId).then((data) => {
 			if (data.resultCode === 0) {
 				dispatch(acceptUnfollow(userId))
 			}
-			dispatch(setIsFollowingProgress(false, userId))
+			dispatch(setIsFetchingAC(false))
 		})
 	}
 }
