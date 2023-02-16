@@ -1,14 +1,21 @@
 import s from '../components/User/User.module.css'
 
 export const Pagination = (props: PaginationPropsType) => {
-	return (
-		<div className={s.pagination}>
-			<span>1</span>
-			<span>2</span>
-			<span>3</span>
-			<span>4</span>
-			<span>5</span>
-		</div>
-	)
+	let pagesCount = Math.ceil(props.totalCount / props.pageSize / 500)
+	let pages = []
+	for (let i = 1; i <= pagesCount; i++) {
+		pages.push(i)
+	}
+	const totalPages = pages.map((p) => (
+		<span className={props.currentPage === p ? s.active : s.pagination}>
+			{p}
+		</span>
+	))
+
+	return <div className={s.pagination}>{totalPages}</div>
 }
-type PaginationPropsType = {}
+type PaginationPropsType = {
+	pageSize: number
+	totalCount: number
+	currentPage: number
+}

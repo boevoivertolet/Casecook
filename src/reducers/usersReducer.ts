@@ -4,7 +4,7 @@ import { setIsFetchingAC } from './commonReducer'
 
 let initialState: InitialUsersStateType = {
 	items: [],
-	totalCount: 500,
+	totalCount: 100,
 	error: null,
 	pageSize: 100,
 	currentPage: 1,
@@ -84,7 +84,6 @@ export const getUsers = (page: number, pageSize: number) => {
 		usersAPI.getUsers(page, pageSize).then((data) => {
 			dispatch(setIsFetchingAC(false))
 			dispatch(setUsers(data.items))
-			console.log(data.items)
 			dispatch(setTotalUsersCount(data.totalCount))
 		})
 	}

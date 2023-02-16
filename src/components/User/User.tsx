@@ -23,7 +23,7 @@ export const User = (props: UserPropsType) => {
 				/>
 			</div>
 			<div className={s.statusName}>
-				<div>{props.user.name}</div>
+				<div className={s.userName}>{props.user.name}</div>
 				<div>{props.user.status}</div>
 				<UniversalButton
 					title={props.user.followed ? 'unfollow' : 'follow'}

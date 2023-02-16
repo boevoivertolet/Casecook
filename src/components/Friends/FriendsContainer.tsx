@@ -28,11 +28,17 @@ const mapStateToProps = (
 	state: ReduxRootStateType
 ): FriendsMapStateToPropsType => {
 	return {
-		users: state.users
+		users: state.users,
+		pageSize: state.users.pageSize,
+		totalCount: state.users.totalCount,
+		currentPage: state.users.currentPage
 	}
 }
 type FriendsMapStateToPropsType = {
 	users: InitialUsersStateType
+	pageSize: number
+	totalCount: number
+	currentPage: number
 }
 type FriendsMapDispatchToPropsType = {
 	follow: (userId: string) => void
