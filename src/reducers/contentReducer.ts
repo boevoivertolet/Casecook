@@ -6,7 +6,7 @@ let initialState: InitialProfileStateType = {
 	newPostText: ''
 }
 
-const profileReducer = (
+const contentReducer = (
 	state: InitialProfileStateType = initialState,
 	action: ProfileActionType
 ): InitialProfileStateType => {
@@ -83,4 +83,4 @@ export type ProfileActionType =
 	| AddPostACType
 	| DeletePostACType
 
-export default profileReducer
+export default contentReducer

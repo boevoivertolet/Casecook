@@ -24,14 +24,18 @@
 	width: 100%;
 	word-wrap: break-word;
 }
-.userBlock .img {
+.img {
 	margin: 20px;
 	width: 90px;
 	background: #333336;
 	border-radius: 50px;
 }
+
 .imgBlock {
 	margin: 5px;
+	background: inherit;
+}
+.imgBlock a {
 	background: inherit;
 }
 .statusName div {

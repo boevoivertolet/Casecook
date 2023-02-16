@@ -1,6 +1,6 @@
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import { useState } from 'react'
-import { PostDataType } from '../../../reducers/profileReducer'
+import { PostDataType } from '../../../reducers/contentReducer'
 import s from '../Content.module.css'
 
 export const Post = (props: PostType) => {

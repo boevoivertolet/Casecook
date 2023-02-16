@@ -2,6 +2,7 @@ import { UsersItemsType } from '../../reducers/usersReducer'
 import s from './User.module.css'
 import userPhoto from '../../assets/userphoto/user.jpeg'
 import { UniversalButton } from '../../common/UniversalButton'
+import { NavLink } from 'react-router-dom'
 export const User = (props: UserPropsType) => {
 	function followUnfollow() {
 		if (props.user.followed) {
@@ -14,13 +15,17 @@ export const User = (props: UserPropsType) => {
 	return (
 		<div className={s.userBlock}>
 			<div className={s.imgBlock}>
-				<img
-					className={s.img}
-					src={
-						props.user.photos.large ? props.user.photos.large : userPhoto
-					}
-					alt='#'
-				/>
+				<NavLink to={'/profile'}>
+					<img
+						className={s.img}
+						src={
+							props.user.photos.large
+								? props.user.photos.large
+								: userPhoto
+						}
+						alt='#'
+					/>
+				</NavLink>
 			</div>
 			<div className={s.statusName}>
 				<div className={s.userName}>{props.user.name}</div>

@@ -3,9 +3,9 @@ import {
 	updateTextarea,
 	addPost,
 	deletePost
-} from '../../reducers/profileReducer'
+} from '../../reducers/contentReducer'
 import { connect } from 'react-redux'
-import { PostDataType } from '../../reducers/profileReducer'
+import { PostDataType } from '../../reducers/contentReducer'
 import { ReduxRootStateType } from '../../store'
 import Content from './Content'
 import { AuthUserType } from '../../reducers/authReducer'
@@ -31,8 +31,8 @@ const mapStateToProps = (
 	state: ReduxRootStateType
 ): ContentMapStateToPropsType => {
 	return {
-		postData: state.profile.postData,
-		newPostText: state.profile.newPostText,
+		postData: state.content.postData,
+		newPostText: state.content.newPostText,
 		authUser: state.auth.data
 	}
 }
