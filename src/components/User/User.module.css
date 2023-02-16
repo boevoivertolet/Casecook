@@ -1,10 +1,9 @@
 .userBlock {
-	justify-content: center;
+	justify-content: start;
 	width: 100%;
 	display: flex;
 	flex-direction: row;
 	max-width: 100%;
-	margin-top: 35px;
 	min-height: 200px;
 	height: max-content;
 	background: #333336;
@@ -12,18 +11,21 @@
 }
 
 .userBlock .statusName {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 	box-sizing: content-box;
 	align-self: start;
 	background: inherit;
 	border-radius: 15px;
 	margin: 5px;
 	height: max-content;
-	max-width: 300px;
-	width: 400px;
+	max-width: 600px;
+	width: 100%;
 	word-wrap: break-word;
 }
 .userBlock .img {
-	margin: 5px;
+	margin: 20px;
 	width: 90px;
 	background: #333336;
 	border-radius: 50px;
