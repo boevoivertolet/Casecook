@@ -21,7 +21,10 @@ export const App = () => {
 			</div>
 			<div className={s.content}>
 				<Routes>
-					<Route path='/my-profile' element={<ContentContainer />} />
+					<Route path={`/profile`}>
+						<Route index element={<ContentContainer />} />
+						<Route path=':userId' element={<ContentContainer />} />
+					</Route>
 
 					<Route path='/news' element={<NewsContainer />} />
 

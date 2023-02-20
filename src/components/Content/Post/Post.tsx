@@ -1,7 +1,9 @@
 import DeleteOutlinedIcon from '@mui/icons-material/DeleteOutlined'
 import { useState } from 'react'
 import { PostDataType } from '../../../reducers/contentReducer'
+import { UserProfileType } from '../../../reducers/profileReducer'
 import s from '../Content.module.css'
+import userPhoto from '../../../assets/userphoto/user.jpeg'
 
 export const Post = (props: PostType) => {
 	const [dateTime, setDateTime] = useState(Date().slice(0, 25))
@@ -14,12 +16,16 @@ export const Post = (props: PostType) => {
 				<div className={s.postUser}>
 					<img
 						className={s.userAva}
-						src={props.postData.userAva}
+						src={
+							props.userProfile?.photos.small
+								? props.userProfile?.photos.small
+								: userPhoto
+						}
 						alt='#'
 					/>
 				</div>
 				<div className={s.postUserName}>
-					{props.postData.userName}
+					{props.userProfile?.fullName}
 					<div className={s.dateTime}>{dateTime}</div>
 				</div>
 			</div>
@@ -32,6 +38,8 @@ export const Post = (props: PostType) => {
 }
 
 type PostType = {
+	id: number | null
 	postData: PostDataType
+	userProfile: UserProfileType | null
 	deletePost: (postId: number) => void
 }

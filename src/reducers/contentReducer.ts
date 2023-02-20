@@ -1,15 +1,15 @@
 import { Dispatch } from 'redux'
 import { ThunkDispatchType } from '../store'
 
-let initialState: InitialProfileStateType = {
+let initialState: InitialContentStateType = {
 	postData: [],
 	newPostText: ''
 }
 
 const contentReducer = (
-	state: InitialProfileStateType = initialState,
-	action: ProfileActionType
-): InitialProfileStateType => {
+	state: InitialContentStateType = initialState,
+	action: ContentActionType
+): InitialContentStateType => {
 	switch (action.type) {
 		case 'ADD-POST':
 			let newPost = {
@@ -63,7 +63,7 @@ export const deletePost =
 		dispatch(deletePostAC(postId))
 	}
 
-type InitialProfileStateType = {
+type InitialContentStateType = {
 	postData: PostDataType[]
 	newPostText: string
 }
@@ -78,7 +78,7 @@ export type PostDataType = {
 type UpdateTextareaACType = ReturnType<typeof updateTextareaAC>
 type AddPostACType = ReturnType<typeof addPostAC>
 type DeletePostACType = ReturnType<typeof deletePostAC>
-export type ProfileActionType =
+export type ContentActionType =
 	| UpdateTextareaACType
 	| AddPostACType
 	| DeletePostACType

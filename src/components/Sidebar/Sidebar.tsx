@@ -5,7 +5,7 @@ export const Sidebar = () => {
 		<div className={s.sidebar}>
 			<div className={s.sidebarLinks}>
 				<div className={s.sidebarNav}>
-					<NavLink to='/my-profile'>My profile</NavLink>
+					<NavLink to={`/profile/${24563}`}>My profile</NavLink>
 				</div>
 				<div className={s.sidebarNav}>
 					<NavLink to='/news'>News</NavLink>

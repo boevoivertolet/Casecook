@@ -15,7 +15,7 @@ export const User = (props: UserPropsType) => {
 	return (
 		<div className={s.userBlock}>
 			<div className={s.imgBlock}>
-				<NavLink to={'/profile'}>
+				<NavLink to={`/profile/${props.user.id}`}>
 					<img
 						className={s.img}
 						src={
