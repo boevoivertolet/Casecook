@@ -104,7 +104,13 @@
 	height: 140px;
 }
 
-/* postsContainer */
+.textFiledPosts {
+	order: 0;
+	flex: 1 1 100%;
+	align-self: flex-start;
+	margin-right: 15px;
+	margin-top: 15px;
+}
 
 .postsFriendsContainer {
 	flex-wrap: wrap;

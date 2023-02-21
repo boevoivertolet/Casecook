@@ -15,16 +15,18 @@ export const Profile = (props: ProfilePropsType) => {
 		<div>
 			<ProfileInfo userProfile={props.userProfile} status={props.status} />
 			<div className={s.postsFriendsContainer}>
-				<TextareaButton
-					addPost={props.addPost}
-					newPostText={props.newPostText}
-					updateTextarea={props.updateTextarea}
-				/>
-				<PostsBody
-					postData={props.postData}
-					userProfile={props.userProfile}
-					deletePost={props.deletePost}
-				/>
+				<div className={s.textFiledPosts}>
+					<TextareaButton
+						addPost={props.addPost}
+						newPostText={props.newPostText}
+						updateTextarea={props.updateTextarea}
+					/>
+					<PostsBody
+						postData={props.postData}
+						userProfile={props.userProfile}
+						deletePost={props.deletePost}
+					/>
+				</div>
 				<FriendsBody />
 			</div>
 		</div>
