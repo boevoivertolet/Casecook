@@ -1,4 +1,4 @@
-import { ContentActionType } from './reducers/contentReducer'
+import { ContentActionType } from './reducers/postReducer'
 import {
 	applyMiddleware,
 	combineReducers,
@@ -7,7 +7,7 @@ import {
 
 import thunk from 'redux-thunk'
 import authReducer, { AuthActionType } from './reducers/authReducer'
-import contentReducer from './reducers/contentReducer'
+import postReducer from './reducers/postReducer'
 import commonReducer, { CommonActionType } from './reducers/commonReducer'
 import usersReducer, { UsersActionType } from './reducers/usersReducer'
 import profilePageReducer, {
@@ -15,7 +15,7 @@ import profilePageReducer, {
 } from './reducers/profileReducer'
 
 const rootReducer = combineReducers({
-	content: contentReducer,
+	post: postReducer,
 	profile: profilePageReducer,
 	auth: authReducer,
 	common: commonReducer,

@@ -1,11 +1,7 @@
 import React from 'react'
-import {
-	updateTextarea,
-	addPost,
-	deletePost
-} from '../../reducers/contentReducer'
+import { updateTextarea, addPost, deletePost } from '../../reducers/postReducer'
 import { connect } from 'react-redux'
-import { PostDataType } from '../../reducers/contentReducer'
+import { PostDataType } from '../../reducers/postReducer'
 import { ReduxRootStateType } from '../../store'
 import Content from './Content'
 import { AuthUserType } from '../../reducers/authReducer'
@@ -18,11 +14,11 @@ import {
 	updateStatusProfile,
 	UserProfileType
 } from '../../reducers/profileReducer'
+import { UsersItemsType } from '../../reducers/usersReducer'
 
 class ContentContainer extends React.Component<ContentContainerType> {
 	componentDidMount(): void {
 		let userId = Number(this.props.router.params.userId)
-		console.log(this.props.router.params.userId)
 
 		if (!userId || undefined) {
 			userId = 24563
@@ -32,7 +28,7 @@ class ContentContainer extends React.Component<ContentContainerType> {
 	}
 
 	render() {
-		return <Content {...this.props} />
+		return <Content {...this.props} userProfile={this.props.userProfile} />
 	}
 }
 
@@ -40,14 +36,16 @@ const mapStateToProps = (
 	state: ReduxRootStateType
 ): ContentMapStateToPropsType => {
 	return {
-		postData: state.content.postData,
-		newPostText: state.content.newPostText,
+		users: state.users.items,
+		postData: state.post.postData,
+		newPostText: state.post.newPostText,
 		authUser: state.auth.data,
 		userProfile: state.profile.userProfile,
 		status: state.profile.status
 	}
 }
 type ContentMapStateToPropsType = {
+	users: Array<UsersItemsType>
 	postData: PostDataType[]
 	newPostText: string
 	authUser: AuthUserType

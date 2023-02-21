@@ -1,4 +1,4 @@
-import { PostDataType } from '../../reducers/contentReducer'
+import { PostDataType } from '../../reducers/postReducer'
 import s from './Content.module.css'
 import { AuthUserType } from '../../reducers/authReducer'
 import { Profile } from '../Profile/Profile'
@@ -7,7 +7,7 @@ import { UserProfileType } from '../../reducers/profileReducer'
 const Content = (props: ContentPropsType) => {
 	return (
 		<div className={s.contentContainer}>
-			<Profile id={props.authUser.id} {...props} />
+			<Profile {...props} userProfile={props.userProfile} />
 		</div>
 	)
 }

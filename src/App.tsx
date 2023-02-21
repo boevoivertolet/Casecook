@@ -25,6 +25,7 @@ export const App = () => {
 						<Route index element={<ContentContainer />} />
 						<Route path=':userId' element={<ContentContainer />} />
 					</Route>
+					<Route path='/my-profile' element={<ContentContainer />} />
 
 					<Route path='/news' element={<NewsContainer />} />
 

@@ -6,7 +6,7 @@ let initialState: InitialContentStateType = {
 	newPostText: ''
 }
 
-const contentReducer = (
+const postReducer = (
 	state: InitialContentStateType = initialState,
 	action: ContentActionType
 ): InitialContentStateType => {
@@ -14,12 +14,8 @@ const contentReducer = (
 		case 'ADD-POST':
 			let newPost = {
 				postId: Date.now(),
-				message: action.message,
-				userAva:
-					'https://resizing.flixster.com/U7jLXZqIWp875Z4soUg1704DT78=/300x300/v2/https://flxt.tmsimg.com/assets/p13001485_i_h9_aa.jpg',
-				userName: 'Gordon Ramsey'
+				message: action.message
 			}
-			console.log(newPost)
 
 			return {
 				...state,
@@ -47,8 +43,6 @@ const deletePostAC = (postId: number) => {
 	return { type: 'DELETE-POST', postId } as const
 }
 
-//ActionsTypes
-
 //Thunks
 export const updateTextarea =
 	(newPostText: string) => (dispatch: Dispatch<ThunkDispatchType>) => {
@@ -71,8 +65,6 @@ type InitialContentStateType = {
 export type PostDataType = {
 	postId: number
 	message: string
-	userAva: string
-	userName: string
 }
 
 type UpdateTextareaACType = ReturnType<typeof updateTextareaAC>
@@ -83,4 +75,4 @@ export type ContentActionType =
 	| AddPostACType
 	| DeletePostACType
 
-export default contentReducer
+export default postReducer
