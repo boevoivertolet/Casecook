@@ -1,19 +1,19 @@
-import { UniversalButton } from '../../common/UniversalButton'
-import { UniversalTextarea } from '../../common/UniversalTextarea'
 import s from '../Content/Content.module.css'
-import { ChangeEvent } from 'react'
-import { Post } from '../Content/Post/Post'
 import { PostDataType } from '../../reducers/postReducer'
 import { UserProfileType } from '../../reducers/profileReducer'
 import { ProfileInfo } from './ProfileInfo'
-import { FriendsBody } from './FriendsBody'
 import { TextareaButton } from '../../common/TextareaButton'
 import { PostsBody } from '../Content/Post/PostsBody'
+import { FriendsBody } from '../Friends/FriendsBody'
 
 export const Profile = (props: ProfilePropsType) => {
 	return (
 		<div>
-			<ProfileInfo userProfile={props.userProfile} status={props.status} />
+			<ProfileInfo
+				updateStatusProfile={props.updateStatusProfile}
+				userProfile={props.userProfile}
+				status={props.status}
+			/>
 			<div className={s.postsFriendsContainer}>
 				<div className={s.textFiledPosts}>
 					<TextareaButton

@@ -28,7 +28,13 @@ class ContentContainer extends React.Component<ContentContainerType> {
 	}
 
 	render() {
-		return <Content {...this.props} userProfile={this.props.userProfile} />
+		return (
+			<Content
+				{...this.props}
+				userProfile={this.props.userProfile}
+				status={this.props.status}
+			/>
+		)
 	}
 }
 

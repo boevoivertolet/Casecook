@@ -1,6 +1,7 @@
 import { UserProfileType } from '../../reducers/profileReducer'
 import s from '../Content/Content.module.css'
 import userPhoto from '../../assets/userphoto/user.jpeg'
+import { ProfileStatus } from './ProfileStatus'
 export const ProfileInfo = (props: ProfileInfoType) => {
 	return (
 		<div className={s.profileInfo}>
@@ -22,7 +23,10 @@ export const ProfileInfo = (props: ProfileInfoType) => {
 					/>
 					<div className={s.nameDescription}>
 						<h2>{props.userProfile?.fullName}</h2>
-						<div>{props.status}</div>
+						<ProfileStatus
+							status={props.status}
+							updateStatusProfile={props.updateStatusProfile}
+						/>
 						<div>
 							{props.userProfile?.lookingForAJob
 								? 'looking For A Job'
@@ -37,4 +41,5 @@ export const ProfileInfo = (props: ProfileInfoType) => {
 type ProfileInfoType = {
 	userProfile: UserProfileType | null
 	status: string
+	updateStatusProfile: (mess: string) => void
 }

@@ -1,6 +1,3 @@
-import { Dispatch } from 'react'
-import { ThunkDispatchType } from '../store'
-
 let initialState: InitialCommonStateType = {
 	isFetching: false
 }

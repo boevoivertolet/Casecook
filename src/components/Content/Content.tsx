@@ -7,7 +7,11 @@ import { UserProfileType } from '../../reducers/profileReducer'
 const Content = (props: ContentPropsType) => {
 	return (
 		<div className={s.contentContainer}>
-			<Profile {...props} userProfile={props.userProfile} />
+			<Profile
+				{...props}
+				userProfile={props.userProfile}
+				status={props.status}
+			/>
 		</div>
 	)
 }
