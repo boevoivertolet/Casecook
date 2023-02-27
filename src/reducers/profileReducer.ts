@@ -4,7 +4,7 @@ import { profileAPI } from '../api/api'
 
 let initialState: InitialProfileType = {
 	userProfile: null,
-	status: ''
+	status: '1111111111111111111'
 }
 
 const profilePageReducer = (
@@ -45,23 +45,25 @@ export const getUserProfile = (userId: number) => (dispatch: Dispatch) => {
 export const getStatusProfile = (userId: number) => (dispatch: Dispatch) => {
 	dispatch(setIsFetchingAC(true))
 	profileAPI.getStatus(userId).then((status) => {
-		console.log(status)
 		dispatch(setIsFetchingAC(false))
 		if (status === null) {
-			dispatch(setStatusProfile(';)'))
+			dispatch(setStatusProfile('no status'))
 		} else {
 			dispatch(setStatusProfile(status))
+			console.log(status)
 		}
 	})
 }
 export const updateStatusProfile = (status: string) => (dispatch: Dispatch) => {
-	console.log('Thunk:', status)
+	console.log('начало санки :', status)
 	dispatch(setIsFetchingAC(true))
+	console.log('крутилка вкл.')
 	profileAPI.updateStatus(status).then((res) => {
 		dispatch(setIsFetchingAC(false))
-		console.log('action:', status)
-		if (res.data.resultCode === 0) {
-			dispatch(setStatusProfile(status))
+		console.log('крутилка выкл.')
+		if (res.resultCode === 0) {
+			dispatch(setStatusProfile(res))
+			console.log('конец санки :', status)
 		}
 	})
 }
