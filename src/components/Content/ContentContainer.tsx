@@ -18,7 +18,6 @@ import { UsersItemsType } from '../../reducers/usersReducer'
 
 class ContentContainer extends React.Component<ContentContainerType> {
 	componentDidMount() {
-		debugger
 		let userId = Number(this.props.router.params.userId)
 
 		if (!userId || undefined) {
@@ -26,11 +25,16 @@ class ContentContainer extends React.Component<ContentContainerType> {
 		}
 		this.props.getUserProfile(userId)
 		this.props.getStatusProfile(userId)
-		debugger
 	}
 
 	render() {
-		return <Content {...this.props} status={this.props.status} />
+		return (
+			<Content
+				{...this.props}
+				status={this.props.status}
+				updateStatusProfile={this.props.updateStatusProfile}
+			/>
+		)
 	}
 }
 

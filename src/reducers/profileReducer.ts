@@ -4,7 +4,7 @@ import { profileAPI } from '../api/api'
 
 let initialState: InitialProfileType = {
 	userProfile: null,
-	status: '1111111111111111111'
+	status: ''
 }
 
 const profilePageReducer = (
@@ -62,7 +62,7 @@ export const updateStatusProfile = (status: string) => (dispatch: Dispatch) => {
 		dispatch(setIsFetchingAC(false))
 		console.log('крутилка выкл.')
 		if (res.resultCode === 0) {
-			dispatch(setStatusProfile(res))
+			dispatch(setStatusProfile(status))
 			console.log('конец санки :', status)
 		}
 	})
