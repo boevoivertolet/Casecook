@@ -85,7 +85,7 @@
 }
 .nameDescription div {
 	background-color: inherit;
-	margin-left: 9px;
+	margin-left: 0px;
 }
 
 .ava {
@@ -266,4 +266,30 @@
 	border-radius: 15px;
 	background: inherit;
 	margin: 5px 5px 1px 5px;
+}
+.profileStatus span {
+	background: inherit;
+	font-size: 1rem;
+}
+.profileStatus {
+	text-align: left;
+}
+
+.profileStatus input {
+	background: inherit;
+	color: white;
+	outline: none;
+	display: block;
+	width: 100%;
+	height: calc(0.25rem + 2px);
+	padding: 0.375rem 0.75rem;
+	font-family: inherit;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	background-color: inherit;
+	background-clip: padding-box;
+	border: 1px solid #bdbdbd;
+	border-radius: 0.25rem;
+	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
