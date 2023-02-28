@@ -1,4 +1,5 @@
 import userPhoto from '../../assets/userphoto/user.jpeg'
+import logo from '../../assets/logo/logo.png'
 
 import { NavLink } from 'react-router-dom'
 import { Clock } from '../../features/Clock/Clock'
@@ -9,11 +10,7 @@ export const Header = (props: HeaderPropsType) => {
 	return (
 		<div className={s.header}>
 			<div className={s.logoBlock}>
-				<img
-					className={s.logo}
-					src='https://creativecommons.org/images/deed/logo-cc-heart-white.png'
-					alt='logo'
-				/>
+				<img className={s.logo} src={logo} alt='logo' />
 				<span>Casecook</span>
 			</div>
 			<div className={s.time}>

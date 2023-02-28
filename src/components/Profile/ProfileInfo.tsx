@@ -1,15 +1,13 @@
 import { UserProfileType } from '../../reducers/profileReducer'
 import s from '../Content/Content.module.css'
 import userPhoto from '../../assets/userphoto/user.jpeg'
+import wall from '../../assets/wall/wall.jpg'
+
 import { ProfileStatus } from './ProfileStatus'
 export const ProfileInfo = (props: ProfileInfoType) => {
 	return (
 		<div className={s.profileInfo}>
-			<img
-				className={s.wallPaper}
-				src='http://rdmkuhni.ru/images/cvet-kuhni/seraya-kuhnya/kuhnya-metallik-seryy.jpg'
-				alt='#'
-			/>
+			<img className={s.wallPaper} src={wall} alt='wall' />
 			<div className={s.avaContainer}>
 				<div className={s.ava}>
 					<img
