@@ -7,6 +7,7 @@ export const Login = () => {
 		<div className={s.login}>
 			<header>
 				<div className={s.logoBlock}>
+					<div className={s.wellCome}>Wellcome to Casecook</div>
 					<img className={s.logo} src={logo} alt='logo' />
 				</div>
 			</header>
