@@ -1,6 +1,7 @@
 import { Dispatch } from 'redux'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/api'
+import { LoginFormDataType } from '../components/Login/LoginForm'
 import { setIsFetchingAC } from './commonReducer'
 
 let initialState: InitialAuthStateType = {
@@ -54,17 +55,17 @@ export const getAuthUserData =
 		})
 	}
 
-// export const login =
-// 	({ login, password, rememberMe }: LoginFormDataType) =>
-// 	(dispatch: Dispatch) => {
-// 		dispatch(setIsFetching(true))
-// 		authAPI.login(login, password, rememberMe).then((res) => {
-// 			if (res.resultCode === 0) {
-// 				// dispatch(getAuthUserData())
-// 				alert('getAuthUserData')
-// 			}
-// 		})
-// 	}
+export const login =
+	({ email, password, rememberMe }: LoginFormDataType) =>
+	(dispatch: Dispatch<any>) => {
+		dispatch(setIsFetchingAC(true))
+		authAPI.login(email, password, rememberMe).then((res) => {
+			if (res.resultCode === 0) {
+				dispatch(getAuthUserData())
+				console.log({ email, password, rememberMe })
+			}
+		})
+	}
 
 // export const logout = () => (dispatch: Dispatch<any>) => {
 // 	dispatch(setIsFetching(true))

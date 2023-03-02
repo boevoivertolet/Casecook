@@ -13,6 +13,6 @@ export const UniversalButton = (props: UniversalButtonPropsType) => {
 
 type UniversalButtonPropsType = {
 	title: string
-	onClick: () => void
+	onClick?: () => void
 	disabled?: boolean
 }

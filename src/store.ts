@@ -13,13 +13,15 @@ import usersReducer, { UsersActionType } from './reducers/usersReducer'
 import profilePageReducer, {
 	ProfileActionType
 } from './reducers/profileReducer'
+import { reducer as formReducer } from 'redux-form'
 
 const rootReducer = combineReducers({
 	post: postReducer,
 	profile: profilePageReducer,
 	auth: authReducer,
 	common: commonReducer,
-	users: usersReducer
+	users: usersReducer,
+	form: formReducer
 })
 
 export const store = createStore(rootReducer, applyMiddleware(thunk))

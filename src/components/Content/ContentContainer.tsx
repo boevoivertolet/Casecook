@@ -15,6 +15,7 @@ import {
 	UserProfileType
 } from '../../reducers/profileReducer'
 import { UsersItemsType } from '../../reducers/usersReducer'
+import { Navigate } from 'react-router-dom'
 
 class ContentContainer extends React.Component<ContentContainerType> {
 	componentDidMount() {
@@ -28,6 +29,7 @@ class ContentContainer extends React.Component<ContentContainerType> {
 	}
 
 	render() {
+		if (!this.props.authUser.isAuth) return <Navigate to={'/login'} />
 		return (
 			<Content
 				{...this.props}

@@ -1,8 +1,14 @@
-import { UniversalButton } from '../../common/UniversalButton'
 import s from './Login.module.css'
 import logo from '../../assets/logo/logo.png'
+import { LoginFormDataType, LoginReduxForm } from './LoginForm'
+import { Navigate } from 'react-router-dom'
 
-export const Login = () => {
+export const Login = (props: LoginPropsType) => {
+	const onSubmit = (formData: LoginFormDataType) => {
+		props.login(formData)
+	}
+	if (props.isAuth) return <Navigate to='/my-profile' />
+
 	return (
 		<div className={s.login}>
 			<header>
@@ -12,25 +18,11 @@ export const Login = () => {
 				</div>
 			</header>
 			<h1>Login</h1>
-			<form>
-				<div>
-					<input type='text' placeholder={'login'} />
-				</div>
-				<div>
-					<input type='text' placeholder={'password'} />
-				</div>
-				<div>
-					<input type='checkbox' /> remember me
-				</div>
-				<div>
-					<UniversalButton
-						title={'Login'}
-						onClick={() => {
-							alert()
-						}}
-					/>
-				</div>
-			</form>
+			<LoginReduxForm onSubmit={onSubmit} />
 		</div>
 	)
+}
+type LoginPropsType = {
+	login: (formData: LoginFormDataType) => void
+	isAuth: boolean
 }

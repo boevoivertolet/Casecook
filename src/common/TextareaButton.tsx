@@ -1,30 +1,18 @@
-import { UniversalButton } from './UniversalButton'
-import { UniversalTextarea } from './UniversalTextarea'
 import s from '../components/Content/Content.module.css'
-import { ChangeEvent } from 'react'
+import { AddPostFormDataType, AddPostFormRedux } from './AddPostForm'
 
 export const TextareaButton = (props: TextareaButtonPropsType) => {
-	const onChangeHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-		props.updateTextarea(e.currentTarget.value)
-	}
-	const addPost = () => {
-		props.addPost(props.newPostText)
+	const addPost = (mess: AddPostFormDataType) => {
+		props.addPost(mess.newPostBody)
 	}
 
 	return (
 		<div className={s.textAreaButtonBlock}>
-			<UniversalTextarea
-				onChange={onChangeHandler}
-				text={props.newPostText}
-				placeholder={"What's new?"}
-			/>
-			<UniversalButton onClick={addPost} title={'Post'} />
+			<AddPostFormRedux onSubmit={addPost} />
 		</div>
 	)
 }
 
 type TextareaButtonPropsType = {
-	newPostText: string
-	updateTextarea: (text: string) => void
 	addPost: (message: string) => void
 }

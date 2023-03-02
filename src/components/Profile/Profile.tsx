@@ -16,11 +16,7 @@ export const Profile = (props: ProfilePropsType) => {
 			/>
 			<div className={s.postsFriendsContainer}>
 				<div className={s.textFiledPosts}>
-					<TextareaButton
-						addPost={props.addPost}
-						newPostText={props.newPostText}
-						updateTextarea={props.updateTextarea}
-					/>
+					<TextareaButton addPost={props.addPost} />
 					<PostsBody
 						postData={props.postData}
 						userProfile={props.userProfile}
@@ -35,10 +31,8 @@ export const Profile = (props: ProfilePropsType) => {
 
 type ProfilePropsType = {
 	postData: PostDataType[]
-	newPostText: string
 	userProfile: UserProfileType | null
 	status: string
-	updateTextarea: (text: string) => void
 	addPost: (message: string) => void
 	deletePost: (postId: number) => void
 	getUserProfile: (userId: number) => void

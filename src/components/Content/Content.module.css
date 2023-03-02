@@ -210,7 +210,7 @@
 	height: 200px;
 	background-color: #333336;
 }
-.textarea {
+.field {
 	padding: 15px 15px 15px 30px;
 	box-sizing: border-box;
 	line-height: 1;
@@ -240,16 +240,15 @@
 	box-sizing: content-box;
 	font-family: inherit;
 	color: #ffffff;
-	padding: 1px 1px 6px 1px;
 	border-radius: 9px;
 	vertical-align: middle;
 	font-size: 13px;
 	background-color: #666666;
 	border: none;
-	width: 60px;
 	height: 30px;
 	font-weight: 600;
 	align-self: flex-end;
+	margin: 10px 10px 10px 0px;
 }
 .universalButton:hover {
 	background-color: #626263;
@@ -291,4 +290,11 @@
 	border: 1px solid #bdbdbd;
 	border-radius: 0.25rem;
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.textarea {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+}
+.textareaButton {
 }
