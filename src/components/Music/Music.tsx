@@ -3,7 +3,6 @@ export const Music = () => {
 	return (
 		<div className={s.music}>
 			<div>
-				Music
 				<div>
 					<a
 						target={'_blank'}
