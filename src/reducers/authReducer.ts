@@ -34,9 +34,9 @@ const authReducer = (
 // Action Creators
 
 const setAuthUserDataAC = (
-	id: number,
-	email: string,
-	login: string,
+	id: number | null,
+	email: string | null,
+	login: string | null,
 	isAuth: boolean
 ) => ({ type: 'SET-USER-DATA', payload: { id, email, login, isAuth } } as const) //Action Create
 
@@ -67,14 +67,14 @@ export const login =
 		})
 	}
 
-// export const logout = () => (dispatch: Dispatch<any>) => {
-// 	dispatch(setIsFetching(true))
-// 	authAPI.logout().then((data) => {
-// 		if (data.resultCode === 0) {
-// 			dispatch(setAuthUserDataAC(null, null, null, false))
-// 		}
-// 	})
-// }
+export const logout = () => (dispatch: Dispatch<any>) => {
+	dispatch(setIsFetchingAC(true))
+	authAPI.logout().then((data) => {
+		if (data.resultCode === 0) {
+			dispatch(setAuthUserDataAC(null, null, null, false))
+		}
+	})
+}
 //Types
 
 export type AuthUserType = {
