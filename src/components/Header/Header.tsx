@@ -1,7 +1,5 @@
 import userPhoto from '../../assets/userphoto/user.jpeg'
 import logo from '../../assets/logo/logo.png'
-
-import { NavLink } from 'react-router-dom'
 import { Clock } from '../../features/Clock/Clock'
 
 import { AuthUserType } from '../../reducers/authReducer'
@@ -17,12 +15,11 @@ export const Header = (props: HeaderPropsType) => {
 				<Clock />
 			</div>
 			<div className={s.loginName}>
+				<button className={s.logout} onClick={props.logout}>
+					logout
+				</button>
 				<img src={userPhoto} alt='#' />
-				{props.authUser.login ? (
-					props.authUser.login
-				) : (
-					<NavLink to={'/login'}>Login</NavLink>
-				)}
+				{props.authUser.login}
 			</div>
 		</div>
 	)
@@ -30,4 +27,5 @@ export const Header = (props: HeaderPropsType) => {
 
 type HeaderPropsType = {
 	authUser: AuthUserType
+	logout: () => void
 }

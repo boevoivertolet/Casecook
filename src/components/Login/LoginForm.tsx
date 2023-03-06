@@ -24,7 +24,6 @@ export const LoginForm: React.FC<InjectedFormProps<LoginFormDataType>> = (
 			</div>
 			<div>
 				<UniversalButton title={'Login'} />
-				<UniversalButton title={'Registration'} />
 			</div>
 		</form>
 	)
