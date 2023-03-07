@@ -22,7 +22,7 @@ class ContentContainer extends React.Component<ContentContainerType> {
 		let userId = Number(this.props.router.params.userId)
 
 		if (!userId || undefined) {
-			userId = 24563
+			userId = Number(this.props.authUser.id)
 		}
 		this.props.getUserProfile(userId)
 		this.props.getStatusProfile(userId)

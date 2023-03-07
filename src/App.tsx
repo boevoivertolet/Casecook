@@ -9,7 +9,6 @@ import MusicContainer from './components/Music/MusicContainer'
 import SettingsContainer from './components/Settings/SettingsContainer'
 import FriendsContainer from './components/Friends/FriendsContainer'
 import LoginContainer from './components/Login/LoginContainer'
-import { Greetings } from './components/Greetings/Greetings'
 import GreetingsContainer from './components/Greetings/GreetingsContainer'
 
 // export const App = () => {
