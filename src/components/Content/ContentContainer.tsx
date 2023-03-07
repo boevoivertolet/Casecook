@@ -16,6 +16,7 @@ import {
 } from '../../reducers/profileReducer'
 import { UsersItemsType } from '../../reducers/usersReducer'
 import { Navigate } from 'react-router-dom'
+import { withAuthRedirect } from '../../hoc/WithAuthRedirect'
 
 class ContentContainer extends React.Component<ContentContainerType> {
 	componentDidMount() {
@@ -85,6 +86,6 @@ export default compose<React.ComponentType>(
 		getStatusProfile,
 		updateStatusProfile
 	}),
-	withRouter
-	// withAuthRedirect
+	withRouter,
+	withAuthRedirect
 )(ContentContainer)

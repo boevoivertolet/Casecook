@@ -22,6 +22,9 @@ export const LoginForm: React.FC<InjectedFormProps<LoginFormDataType>> = (
 				<Field type={'checkbox'} component={'input'} name={'rememberMe'} />
 				remember me
 			</div>
+			{props.error && (
+				<div className={s.formSummaryError}>{props.error}</div>
+			)}
 			<div>
 				<UniversalButton title={'Login'} />
 			</div>

@@ -1,4 +1,5 @@
 import { Dispatch } from 'redux'
+import { stopSubmit } from 'redux-form'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/api'
 import { LoginFormDataType } from '../components/Login/LoginForm'
@@ -62,7 +63,11 @@ export const login =
 		authAPI.login(email, password, rememberMe).then((res) => {
 			if (res.resultCode === 0) {
 				dispatch(getAuthUserData())
-				console.log({ email, password, rememberMe })
+			} else {
+				let action = stopSubmit('login', {
+					_error: res.messages
+				})
+				dispatch(action)
 			}
 		})
 	}
