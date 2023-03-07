@@ -4,7 +4,7 @@ import { Textarea } from './FormsControl/FormsControls'
 import s from '../components/Content/Content.module.css'
 import { UniversalButton } from './UniversalButton'
 
-const maxLengthCreator10 = maxLengthCreator(10)
+const maxLengthCreator10 = maxLengthCreator(1000)
 
 const AddPostForm: React.FC<InjectedFormProps<AddPostFormDataType>> = (
 	props

@@ -1,5 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import { Navigate } from 'react-router-dom'
+import { AuthUserType } from '../../reducers/authReducer'
 import { ReduxRootStateType } from '../../store'
 import { Settings } from './Settings'
 
@@ -7,16 +9,21 @@ class SettingsContainer extends React.Component<SettingsContainerType> {
 	componentDidMount() {}
 
 	render() {
-		return <Settings {...this.props} />
+		if (!this.props.authUser.isAuth) return <Navigate to={'/login'} />
+		return <Settings />
 	}
 }
 
 const mapStateToProps = (
 	state: ReduxRootStateType
 ): SettingsMapStateToPropsType => {
-	return {}
+	return {
+		authUser: state.auth.data
+	}
 }
-type SettingsMapStateToPropsType = {}
+type SettingsMapStateToPropsType = {
+	authUser: AuthUserType
+}
 type SettingsMapDispatchToPropsType = {}
 type SettingsContainerType = SettingsMapDispatchToPropsType &
 	SettingsMapStateToPropsType

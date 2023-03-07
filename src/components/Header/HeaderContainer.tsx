@@ -9,10 +9,6 @@ import {
 } from '../../reducers/authReducer'
 
 class HeaderContainer extends React.Component<HeaderContainerType> {
-	componentDidMount() {
-		this.props.getAuthUserData()
-	}
-
 	render() {
 		return <Header {...this.props} />
 	}
