@@ -64,8 +64,10 @@ export const login =
 			if (res.resultCode === 0) {
 				dispatch(getAuthUserData())
 			} else {
+				let message =
+					res.messages.length > 0 ? res.messages[0] : ' Some error'
 				let action = stopSubmit('login', {
-					_error: res.messages
+					_error: message
 				})
 				dispatch(action)
 			}
