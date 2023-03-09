@@ -12,8 +12,9 @@ import LoginContainer from './components/Login/LoginContainer'
 import GreetingsContainer from './components/Greetings/GreetingsContainer'
 import { ReduxRootStateType } from './store'
 import { Component } from 'react'
-import { getAuthUserData } from './reducers/authReducer'
+import { initializeApp } from './reducers/appReducer'
 import { connect } from 'react-redux'
+import { Preloader } from './common/Preloader'
 
 // export const App = () => {
 // 	return (
@@ -84,9 +85,12 @@ import { connect } from 'react-redux'
 // }
 class App extends Component<AppType> {
 	componentDidMount() {
-		this.props.getAuthUserData()
+		this.props.initializeApp()
 	}
 	render() {
+		if (!this.props.initialized) {
+			return <Preloader />
+		}
 		return (
 			<div className={s.app}>
 				<div className={s.header}>
@@ -124,15 +128,15 @@ class App extends Component<AppType> {
 
 const mapStateToProps = (state: ReduxRootStateType): AppMapStateToPropsType => {
 	return {
-		// authUser: state.auth.data
+		initialized: state.app.initialized
 	}
 }
 type AppMapStateToPropsType = {
-	// authUser: AuthUserType
+	initialized: boolean
 }
 type AppMapDispatchToPropsType = {
-	getAuthUserData: () => void
+	initializeApp: () => void
 }
 type AppType = AppMapDispatchToPropsType & AppMapStateToPropsType
 
-export default connect(mapStateToProps, { getAuthUserData })(App)
+export default connect(mapStateToProps, { initializeApp })(App)

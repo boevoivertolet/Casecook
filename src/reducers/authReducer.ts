@@ -3,7 +3,7 @@ import { stopSubmit } from 'redux-form'
 import { ThunkAction } from 'redux-thunk'
 import { authAPI } from '../api/api'
 import { LoginFormDataType } from '../components/Login/LoginForm'
-import { setIsFetchingAC } from './commonReducer'
+import { setIsFetchingAC } from './appReducer'
 
 let initialState: InitialAuthStateType = {
 	data: {
@@ -47,7 +47,7 @@ export const getAuthUserData =
 	(): ThunkAction<void, InitialAuthStateType, unknown, AuthActionType> =>
 	(dispatch: Dispatch) => {
 		dispatch(setIsFetchingAC(true))
-		authAPI.getMe().then((response) => {
+		return authAPI.getMe().then((response) => {
 			if (response.resultCode === 0) {
 				let { id, login, email } = response.data
 				dispatch(setAuthUserDataAC(id, email, login, true))

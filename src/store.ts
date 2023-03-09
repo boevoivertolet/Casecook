@@ -8,7 +8,7 @@ import {
 import thunk from 'redux-thunk'
 import authReducer, { AuthActionType } from './reducers/authReducer'
 import postReducer from './reducers/postReducer'
-import commonReducer, { CommonActionType } from './reducers/commonReducer'
+import appReducer, { AppActionType } from './reducers/appReducer'
 import usersReducer, { UsersActionType } from './reducers/usersReducer'
 import profilePageReducer, {
 	ProfileActionType
@@ -19,7 +19,7 @@ const rootReducer = combineReducers({
 	post: postReducer,
 	profile: profilePageReducer,
 	auth: authReducer,
-	common: commonReducer,
+	app: appReducer,
 	users: usersReducer,
 	form: formReducer
 })
@@ -31,7 +31,7 @@ export type ReduxRootStateType = ReturnType<typeof rootReducer>
 export type ThunkDispatchType =
 	| ContentActionType
 	| AuthActionType
-	| CommonActionType
+	| AppActionType
 	| UsersActionType
 	| ProfileActionType
 

@@ -1,5 +1,5 @@
 import { Dispatch } from 'redux'
-import { setIsFetchingAC } from './commonReducer'
+import { setIsFetchingAC } from './appReducer'
 import { profileAPI } from '../api/api'
 
 let initialState: InitialProfileType = {
@@ -50,20 +50,17 @@ export const getStatusProfile = (userId: number) => (dispatch: Dispatch) => {
 			dispatch(setStatusProfile('no status'))
 		} else {
 			dispatch(setStatusProfile(status))
-			console.log(status)
 		}
 	})
 }
 export const updateStatusProfile = (status: string) => (dispatch: Dispatch) => {
-	console.log('начало санки :', status)
 	dispatch(setIsFetchingAC(true))
-	console.log('крутилка вкл.')
+
 	profileAPI.updateStatus(status).then((res) => {
 		dispatch(setIsFetchingAC(false))
-		console.log('крутилка выкл.')
+
 		if (res.resultCode === 0) {
 			dispatch(setStatusProfile(status))
-			console.log('конец санки :', status)
 		}
 	})
 }

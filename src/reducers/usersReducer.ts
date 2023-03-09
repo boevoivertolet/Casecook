@@ -1,6 +1,6 @@
 import { Dispatch } from 'redux'
 import { usersAPI } from '../api/api'
-import { setIsFetchingAC } from './commonReducer'
+import { setIsFetchingAC } from './appReducer'
 
 let initialState: InitialUsersStateType = {
 	items: [],

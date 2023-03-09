@@ -10,7 +10,7 @@ import {
 } from '../../reducers/usersReducer'
 import { ReduxRootStateType } from '../../store'
 import { Friends } from './Friends'
-import { setIsFetchingAC } from '../../reducers/commonReducer'
+import { setIsFetchingAC } from '../../reducers/appReducer'
 import { Preloader } from '../../common/Preloader'
 
 class FriendsContainer extends React.Component<FriendsContainerType> {
@@ -39,7 +39,7 @@ const mapStateToProps = (
 		pageSize: state.users.pageSize,
 		totalCount: state.users.totalCount,
 		currentPage: state.users.currentPage,
-		isFetching: state.common.isFetching
+		isFetching: state.app.isFetching
 	}
 }
 type FriendsMapStateToPropsType = {
