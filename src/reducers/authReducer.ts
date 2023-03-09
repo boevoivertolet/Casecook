@@ -71,6 +71,7 @@ export const login =
 				})
 				dispatch(action)
 			}
+			dispatch(setIsFetchingAC(false))
 		})
 	}
 
@@ -79,6 +80,7 @@ export const logout = () => (dispatch: Dispatch<any>) => {
 	authAPI.logout().then((data) => {
 		if (data.resultCode === 0) {
 			dispatch(setAuthUserDataAC(null, null, null, false))
+			dispatch(setIsFetchingAC(false))
 		}
 	})
 }

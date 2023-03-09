@@ -1,5 +1,6 @@
 import { Dispatch } from 'redux'
 import { ThunkDispatchType } from '../store'
+import { setIsFetchingAC } from './appReducer'
 
 let initialState: InitialContentStateType = {
 	postData: [],
@@ -50,11 +51,15 @@ export const updateTextarea =
 	}
 export const addPost =
 	(message: string) => (dispatch: Dispatch<ThunkDispatchType>) => {
+		dispatch(setIsFetchingAC(true))
 		dispatch(addPostAC(message))
+		dispatch(setIsFetchingAC(false))
 	}
 export const deletePost =
 	(postId: number) => (dispatch: Dispatch<ThunkDispatchType>) => {
+		dispatch(setIsFetchingAC(true))
 		dispatch(deletePostAC(postId))
+		dispatch(setIsFetchingAC(false))
 	}
 
 type InitialContentStateType = {
