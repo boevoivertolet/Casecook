@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {
-	getUsers,
+	requestUsers,
 	InitialUsersStateType,
 	follow,
 	unFollow,
@@ -12,6 +12,13 @@ import { ReduxRootStateType } from '../../store'
 import { Friends } from './Friends'
 import { setIsFetchingAC } from '../../reducers/appReducer'
 import { Preloader } from '../../common/Preloader'
+import {
+	getCurrentPage,
+	getIsFetching,
+	getPageSize,
+	getTotalCount,
+	getUsers
+} from '../../reducers/usersSelectors'
 
 class FriendsContainer extends React.Component<FriendsContainerType> {
 	componentDidMount() {
@@ -31,17 +38,29 @@ class FriendsContainer extends React.Component<FriendsContainerType> {
 	}
 }
 
+// const mapStateToProps = (
+// 	state: ReduxRootStateType
+// ): FriendsMapStateToPropsType => {
+// 	return {
+// 		users: state.users,
+// 		pageSize: state.users.pageSize,
+// 		totalCount: state.users.totalCount,
+// 		currentPage: state.users.currentPage,
+// 		isFetching: state.app.isFetching
+// 	}
+// }
 const mapStateToProps = (
 	state: ReduxRootStateType
 ): FriendsMapStateToPropsType => {
 	return {
-		users: state.users,
-		pageSize: state.users.pageSize,
-		totalCount: state.users.totalCount,
-		currentPage: state.users.currentPage,
-		isFetching: state.app.isFetching
+		users: getUsers(state),
+		pageSize: getPageSize(state),
+		totalCount: getTotalCount(state),
+		currentPage: getCurrentPage(state),
+		isFetching: getIsFetching(state)
 	}
 }
+
 type FriendsMapStateToPropsType = {
 	users: InitialUsersStateType
 	pageSize: number
@@ -63,6 +82,6 @@ export default connect(mapStateToProps, {
 	unFollow,
 	setCurrentPage,
 	setIsFollowingProgress,
-	getUsers,
+	getUsers: requestUsers,
 	setIsFetchingAC
 })(FriendsContainer)

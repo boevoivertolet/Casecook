@@ -78,7 +78,7 @@ export const setIsFollowingProgress = (isFetching: boolean, userId: string) =>
 
 //Thunk Creator
 
-export const getUsers = (page: number, pageSize: number) => {
+export const requestUsers = (page: number, pageSize: number) => {
 	return (dispatch: Dispatch) => {
 		dispatch(setIsFetchingAC(true))
 		usersAPI.getUsers(page, pageSize).then((data) => {
