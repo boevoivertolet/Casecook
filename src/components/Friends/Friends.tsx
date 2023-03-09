@@ -41,5 +41,5 @@ type FriendsPropsType = {
 	unFollow: (userId: string) => void
 	setCurrentPage: (currentPage: number) => void
 	setIsFollowingProgress: (isFetching: boolean, userId: string) => void
-	getUsers: (currentPage: number, pageSize: number) => void
+	requestUsers: (currentPage: number, pageSize: number) => void
 }

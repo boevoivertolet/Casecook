@@ -19,16 +19,19 @@ import {
 	getTotalCount,
 	getUsers
 } from '../../reducers/usersSelectors'
+import { Navigate } from 'react-router-dom'
+import { AuthUserType } from '../../reducers/authReducer'
 
 class FriendsContainer extends React.Component<FriendsContainerType> {
 	componentDidMount() {
-		this.props.getUsers(
+		this.props.requestUsers(
 			this.props.users.currentPage,
 			this.props.users.pageSize
 		)
 	}
 
 	render() {
+		if (!this.props.authUser.isAuth) return <Navigate to={'/login'} />
 		return (
 			<>
 				{this.props.isFetching ? <Preloader /> : null}
@@ -57,7 +60,8 @@ const mapStateToProps = (
 		pageSize: getPageSize(state),
 		totalCount: getTotalCount(state),
 		currentPage: getCurrentPage(state),
-		isFetching: getIsFetching(state)
+		isFetching: getIsFetching(state),
+		authUser: state.auth.data
 	}
 }
 
@@ -67,13 +71,14 @@ type FriendsMapStateToPropsType = {
 	totalCount: number
 	currentPage: number
 	isFetching: boolean
+	authUser: AuthUserType
 }
 type FriendsMapDispatchToPropsType = {
 	follow: (userId: string) => void
 	unFollow: (userId: string) => void
 	setCurrentPage: (currentPage: number) => void
 	setIsFollowingProgress: (isFetching: boolean, userId: string) => void
-	getUsers: (currentPage: number, pageSize: number) => void
+	requestUsers: (currentPage: number, pageSize: number) => void
 }
 type FriendsContainerType = FriendsMapDispatchToPropsType &
 	FriendsMapStateToPropsType
@@ -82,6 +87,6 @@ export default connect(mapStateToProps, {
 	unFollow,
 	setCurrentPage,
 	setIsFollowingProgress,
-	getUsers: requestUsers,
+	requestUsers,
 	setIsFetchingAC
 })(FriendsContainer)

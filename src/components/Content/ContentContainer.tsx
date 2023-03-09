@@ -17,6 +17,7 @@ import {
 import { UsersItemsType } from '../../reducers/usersReducer'
 import { Navigate } from 'react-router-dom'
 import { withAuthRedirect } from '../../hoc/WithAuthRedirect'
+import { Preloader } from '../../common/Preloader'
 
 class ContentContainer extends React.Component<ContentContainerType> {
 	componentDidMount() {
@@ -32,11 +33,14 @@ class ContentContainer extends React.Component<ContentContainerType> {
 	render() {
 		if (!this.props.authUser.isAuth) return <Navigate to={'/login'} />
 		return (
-			<Content
-				{...this.props}
-				status={this.props.status}
-				updateStatusProfile={this.props.updateStatusProfile}
-			/>
+			<>
+				{this.props.isFetching ? <Preloader /> : null}
+				<Content
+					{...this.props}
+					status={this.props.status}
+					updateStatusProfile={this.props.updateStatusProfile}
+				/>
+			</>
 		)
 	}
 }
@@ -50,7 +54,8 @@ const mapStateToProps = (
 		newPostText: state.post.newPostText,
 		authUser: state.auth.data,
 		userProfile: state.profile.userProfile,
-		status: state.profile.status
+		status: state.profile.status,
+		isFetching: state.app.isFetching
 	}
 }
 type ContentMapStateToPropsType = {
@@ -60,6 +65,7 @@ type ContentMapStateToPropsType = {
 	authUser: AuthUserType
 	userProfile: UserProfileType | null
 	status: string
+	isFetching: boolean
 }
 type ContentMapDispatchToPropsType = {
 	updateTextarea: (text: string) => void
