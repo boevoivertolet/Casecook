@@ -1,17 +1,24 @@
-import { ReduxRootStateType } from '../store'
+import {ReduxRootStateType} from '../store'
+import {createSelector} from 'reselect';
+import {InitialUsersStateType} from './usersReducer';
 
-export const getUsers = (state: ReduxRootStateType) => {
-	return state.users
+
+const getUsersSelector = (state: ReduxRootStateType) => {
+    return state.users
 }
+
+export const getUsers = createSelector(getUsersSelector, (users: InitialUsersStateType) => {
+    return users
+});
 export const getPageSize = (state: ReduxRootStateType) => {
-	return state.users.pageSize
+    return state.users.pageSize
 }
 export const getTotalCount = (state: ReduxRootStateType) => {
-	return state.users.totalCount
+    return state.users.totalCount
 }
 export const getCurrentPage = (state: ReduxRootStateType) => {
-	return state.users.currentPage
+    return state.users.currentPage
 }
 export const getIsFetching = (state: ReduxRootStateType) => {
-	return state.app.isFetching
+    return state.app.isFetching
 }
