@@ -9,6 +9,7 @@ class GreetingsContainer extends React.Component<GreetingsContainerType> {
 
 	render() {
 		if (!this.props.isAuth) return <Navigate to='/login' />
+		if (this.props.isAuth) return <Navigate to='/my-profile' />
 		return <Greetings {...this.props} />
 	}
 }
