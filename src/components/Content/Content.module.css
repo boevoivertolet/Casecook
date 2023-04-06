@@ -75,6 +75,8 @@
 }
 
 .textFiledPosts {
+    display: flex;
+    flex-direction: column;
     order: 0;
     flex: 1 1 100%;
     align-self: flex-start;
@@ -229,7 +231,6 @@
     height: 30px;
     font-weight: 600;
     align-self: flex-end;
-    margin: 10px 10px 10px 0;
     padding-bottom: 5px;
 }
 
@@ -287,4 +288,9 @@
 }
 
 .textareaButton {
+    height: 100px;
+}
+.button {
+    justify-content: flex-end;
+    display: flex;
 }

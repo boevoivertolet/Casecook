@@ -6,6 +6,7 @@ import userPhoto from '../../../assets/userphoto/user.jpeg'
 import { DateTime } from './DateTime'
 
 export const Post = (props: PostType) => {
+	console.log('POST RENDER')
 	const deletePost = () => {
 		props.deletePost(props.postData.postId)
 	}

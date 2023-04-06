@@ -39,7 +39,6 @@ const mapStateToProps = (
     state: ReduxRootStateType
 ): FriendsMapStateToPropsType => {
     return {
-        // users: getUsers(state),
         users: getUsers(state),
         pageSize: getPageSize(state),
         totalCount: getTotalCount(state),

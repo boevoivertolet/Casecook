@@ -20,7 +20,7 @@ const AddPostForm: React.FC<InjectedFormProps<AddPostFormDataType>> = (
 					placeholder={"What's new ?"}
 				/>
 			</div>
-			<div>
+			<div className ={s.button}>
 				<UniversalButton title={'post'} />
 			</div>
 		</form>
