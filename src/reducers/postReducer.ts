@@ -2,15 +2,15 @@ import { Dispatch } from 'redux'
 import { ThunkDispatchType } from '../store'
 import { setIsFetchingAC } from './appReducer'
 
-let initialState: InitialContentStateType = {
+let initialState: InitialPostStateType = {
 	postData: [],
 	newPostText: ''
 }
 
 const postReducer = (
-	state: InitialContentStateType = initialState,
+	state: InitialPostStateType = initialState,
 	action: ContentActionType
-): InitialContentStateType => {
+): InitialPostStateType => {
 	switch (action.type) {
 		case 'ADD-POST':
 			let newPost = {
@@ -39,8 +39,8 @@ const postReducer = (
 const updateTextareaAC = (newPostText: string) =>
 	({ type: 'UPDATE-TEXTAREA', newPostText } as const)
 
-const addPostAC = (message: string) => ({ type: 'ADD-POST', message } as const)
-const deletePostAC = (postId: number) => {
+export const addPostAC = (message: string) => ({ type: 'ADD-POST', message } as const)
+export const deletePostAC = (postId: number) => {
 	return { type: 'DELETE-POST', postId } as const
 }
 
@@ -62,7 +62,7 @@ export const deletePost =
 		dispatch(setIsFetchingAC(false))
 	}
 
-type InitialContentStateType = {
+export type InitialPostStateType = {
 	postData: PostDataType[]
 	newPostText: string
 }

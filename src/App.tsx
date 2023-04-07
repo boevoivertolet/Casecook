@@ -14,16 +14,14 @@ import { ReduxRootStateType } from './store'
 import { Component } from 'react'
 import { initializeApp } from './reducers/appReducer'
 import { connect } from 'react-redux'
-import { Preloader } from './common/Preloader'
+
 
 class App extends Component<AppType> {
 	componentDidMount() {
 		this.props.initializeApp()
 	}
 	render() {
-		// if (!this.props.initialized) {
-		// 	return <Preloader />
-		// }
+
 		return (
 			<div className={s.app}>
 				<div className={s.header}>
