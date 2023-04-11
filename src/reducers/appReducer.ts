@@ -10,12 +10,12 @@ const appReducer = (
 	action: AppActionType
 ): InitialAppStateType => {
 	switch (action.type) {
-		case 'SET-IS-FETCHING':
+		case 'samurai-network/app/SET-IS-FETCHING':
 			return {
 				...state,
 				isFetching: action.isFetching
 			}
-		case 'SET-INITIALIZED':
+		case 'samurai-network/app/SET-INITIALIZED':
 			return {
 				...state,
 				initialized: true
@@ -27,8 +27,8 @@ const appReducer = (
 // Action Creators
 
 export const setIsFetchingAC = (isFetching: boolean) =>
-	({ type: 'SET-IS-FETCHING', isFetching } as const) //Action Create
-export const setInitializedAC = () => ({ type: 'SET-INITIALIZED' } as const) //Action Create
+	({ type: 'samurai-network/app/SET-IS-FETCHING', isFetching } as const) //Action Create
+export const setInitializedAC = () => ({ type: 'samurai-network/app/SET-INITIALIZED' } as const) //Action Create
 
 //Thunks
 

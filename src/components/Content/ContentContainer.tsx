@@ -19,7 +19,7 @@ import { Navigate } from 'react-router-dom'
 import { withAuthRedirect } from '../../hoc/WithAuthRedirect'
 import { Preloader } from '../../common/Preloader'
 
-class ContentContainer extends React.Component<ContentContainerType> {
+class ContentContainer extends React.Component<ContentContainerType, any> {
 	componentDidMount() {
 		let userId = Number(this.props.router.params.userId)
 
@@ -31,6 +31,7 @@ class ContentContainer extends React.Component<ContentContainerType> {
 	}
 
 	render() {
+		
 		if (!this.props.authUser.isAuth) return <Navigate to={'/login'} />
 		return (
 			<>

@@ -16,36 +16,36 @@ const usersReducer = (
 	action: UsersActionType
 ): InitialUsersStateType => {
 	switch (action.type) {
-		case 'FOLLOW':
+		case 'samurai-network/user/FOLLOW':
 			return {
 				...state,
 				items: state.items.map((u) =>
 					u.id === action.userId ? { ...u, followed: true } : u
 				)
 			}
-		case 'UNFOLLOW':
+		case 'samurai-network/user/UNFOLLOW':
 			return {
 				...state,
 				items: state.items.map((u) =>
 					u.id === action.userId ? { ...u, followed: false } : u
 				)
 			}
-		case 'SET-USERS':
+		case 'samurai-network/user/SET-USERS':
 			return {
 				...state,
 				items: [...action.items]
 			}
-		case 'SET-CURRENT-PAGE':
+		case 'samurai-network/user/SET-CURRENT-PAGE':
 			return {
 				...state,
 				currentPage: action.currentPage
 			}
-		case 'SET-USERS-TOTAL-COUNT':
+		case 'samurai-network/user/SET-USERS-TOTAL-COUNT':
 			return {
 				...state,
 				totalCount: action.totalCount
 			}
-		case 'SET-IS-FOLLOWING-PROGRESS':
+		case 'samurai-network/user/SET-IS-FOLLOWING-PROGRESS':
 			return {
 				...state,
 				followingInProgress: action.isFetching
@@ -60,18 +60,18 @@ const usersReducer = (
 
 //Action Creators
 export const acceptFollow = (userId: string) =>
-	({ type: 'FOLLOW', userId } as const) //Action Create
+	({ type: 'samurai-network/user/FOLLOW', userId } as const) //Action Create
 export const acceptUnfollow = (userId: string) =>
-	({ type: 'UNFOLLOW', userId } as const) //Action Create
+	({ type: 'samurai-network/user/UNFOLLOW', userId } as const) //Action Create
 export const setUsers = (items: UsersItemsType[]) =>
-	({ type: 'SET-USERS', items } as const) //Action Create
+	({ type: 'samurai-network/user/SET-USERS', items } as const) //Action Create
 export const setCurrentPage = (currentPage: number) =>
-	({ type: 'SET-CURRENT-PAGE', currentPage } as const) //Action Create
+	({ type: 'samurai-network/user/SET-CURRENT-PAGE', currentPage } as const) //Action Create
 export const setTotalUsersCount = (totalCount: number) =>
-	({ type: 'SET-USERS-TOTAL-COUNT', totalCount } as const) //Action Create
+	({ type: 'samurai-network/user/SET-USERS-TOTAL-COUNT', totalCount } as const) //Action Create
 export const setIsFollowingProgress = (isFetching: boolean, userId: string) =>
 	({
-		type: 'SET-IS-FOLLOWING-PROGRESS',
+		type: 'samurai-network/user/SET-IS-FOLLOWING-PROGRESS',
 		isFetching,
 		userId
 	} as const) //Action Create

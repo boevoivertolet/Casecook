@@ -12,12 +12,12 @@ const profilePageReducer = (
 	action: ProfileActionType
 ): InitialProfileType => {
 	switch (action.type) {
-		case 'SET-USER-PROFILE':
+		case 'samurai-network/profile/SET-USER-PROFILE':
 			return {
 				...state,
 				userProfile: action.userProfile
 			}
-		case 'SET-STATUS':
+		case 'samurai-network/profile/SET-STATUS':
 			return {
 				...state,
 				status: action.status
@@ -29,9 +29,9 @@ const profilePageReducer = (
 // Action Creators
 
 const setUserProfile = (userProfile: UserProfileType) =>
-	({ type: 'SET-USER-PROFILE', userProfile } as const) //Action Create
+	({ type: 'samurai-network/profile/SET-USER-PROFILE', userProfile } as const) //Action Create
 const setStatusProfile = (status: string) =>
-	({ type: 'SET-STATUS', status } as const) //Action Create
+	({ type: 'samurai-network/profile/SET-STATUS', status } as const) //Action Create
 
 // Thunk Creators
 

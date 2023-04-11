@@ -22,7 +22,7 @@ const authReducer = (
 	action: AuthActionType
 ): InitialAuthStateType => {
 	switch (action.type) {
-		case 'SET-USER-DATA':
+		case 'samurai-network/auth/SET-USER-DATA':
 			return {
 				...state,
 				data: action.payload
@@ -39,7 +39,11 @@ const setAuthUserDataAC = (
 	email: string | null,
 	login: string | null,
 	isAuth: boolean
-) => ({ type: 'SET-USER-DATA', payload: { id, email, login, isAuth } } as const) //Action Create
+) =>
+	({
+		type: 'samurai-network/auth/SET-USER-DATA',
+		payload: { id, email, login, isAuth }
+	} as const) //Action Create
 
 // Thunk Creators
 
@@ -48,6 +52,7 @@ export const getAuthUserData =
 	(dispatch: Dispatch) => {
 		dispatch(setIsFetchingAC(true))
 		return authAPI.getMe().then((response) => {
+			console.log(response)
 			if (response.resultCode === 0) {
 				let { id, login, email } = response.data
 				dispatch(setAuthUserDataAC(id, email, login, true))
@@ -61,6 +66,8 @@ export const login =
 	(dispatch: Dispatch<any>) => {
 		dispatch(setIsFetchingAC(true))
 		authAPI.login(email, password, rememberMe).then((res) => {
+			// console.log(res)
+
 			if (res.resultCode === 0) {
 				dispatch(getAuthUserData())
 			} else {
@@ -78,6 +85,7 @@ export const login =
 export const logout = () => (dispatch: Dispatch<any>) => {
 	dispatch(setIsFetchingAC(true))
 	authAPI.logout().then((data) => {
+		console.log(data)
 		if (data.resultCode === 0) {
 			dispatch(setAuthUserDataAC(null, null, null, false))
 			dispatch(setIsFetchingAC(false))

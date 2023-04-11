@@ -12,7 +12,7 @@ const postReducer = (
 	action: ContentActionType
 ): InitialPostStateType => {
 	switch (action.type) {
-		case 'ADD-POST':
+		case 'samurai-network/post/ADD-POST':
 			let newPost = {
 				postId: Date.now(),
 				message: action.message
@@ -23,9 +23,9 @@ const postReducer = (
 				postData: [newPost, ...state.postData],
 				newPostText: ''
 			}
-		case 'UPDATE-TEXTAREA':
+		case 'samurai-network/post/UPDATE-TEXTAREA':
 			return { ...state, newPostText: action.newPostText }
-		case 'DELETE-POST':
+		case 'samurai-network/post/DELETE-POST':
 			return {
 				...state,
 				postData: state.postData.filter((el) => el.postId !== action.postId)
@@ -37,11 +37,12 @@ const postReducer = (
 }
 // Actions
 const updateTextareaAC = (newPostText: string) =>
-	({ type: 'UPDATE-TEXTAREA', newPostText } as const)
+	({ type: 'samurai-network/post/UPDATE-TEXTAREA', newPostText } as const)
 
-export const addPostAC = (message: string) => ({ type: 'ADD-POST', message } as const)
+export const addPostAC = (message: string) =>
+	({ type: 'samurai-network/post/ADD-POST', message } as const)
 export const deletePostAC = (postId: number) => {
-	return { type: 'DELETE-POST', postId } as const
+	return { type: 'samurai-network/post/DELETE-POST', postId } as const
 }
 
 //Thunks

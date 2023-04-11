@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import { ReduxRootStateType } from '../../store'
 import { Navigate } from 'react-router-dom'
 
-class GreetingsContainer extends React.Component<GreetingsContainerType> {
+class GreetingsContainer extends React.Component<GreetingsContainerType,any> {
 	componentDidMount() {}
 
 	render() {

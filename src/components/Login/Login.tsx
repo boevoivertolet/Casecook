@@ -3,17 +3,19 @@ import logo from '../../assets/logo/logo.png'
 import { LoginFormDataType, LoginReduxForm } from './LoginForm'
 import { Navigate } from 'react-router-dom'
 
-export const Login = (props: LoginPropsType) => {
+export const Login: React.FC<LoginPropsType> = (props) => {
+	const { isAuth, login, ...restProps } = props
 	const onSubmit = (formData: LoginFormDataType) => {
-		props.login(formData)
+		login(formData)
+		console.log(isAuth)
 	}
-	if (props.isAuth) return <Navigate to='/my-profile' />
+	if (isAuth) return <Navigate to='/my-profile' />
 
 	return (
 		<div className={s.login}>
 			<header>
 				<div className={s.logoBlock}>
-					<div className={s.wellCome}>Wellcome to Casecook</div>
+					<div className={s.wellCome}>Welcome to Casecook</div>
 					<img className={s.logo} src={logo} alt='logo' />
 				</div>
 			</header>
