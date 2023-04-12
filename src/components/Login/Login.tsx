@@ -4,7 +4,7 @@ import { LoginFormDataType, LoginReduxForm } from './LoginForm'
 import { Navigate } from 'react-router-dom'
 
 export const Login: React.FC<LoginPropsType> = (props) => {
-	const { isAuth, login, ...restProps } = props
+	const { isAuth, login } = props
 	const onSubmit = (formData: LoginFormDataType) => {
 		login(formData)
 		console.log(isAuth)

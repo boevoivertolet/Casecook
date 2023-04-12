@@ -1,26 +1,29 @@
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
-import { maxLengthCreator, requiredField } from '../utils/validators/validators'
 import { Textarea } from './FormsControl/FormsControls'
 import s from '../components/Content/Content.module.css'
 import { UniversalButton } from './UniversalButton'
+import {useState} from "react";
 
-const maxLengthCreator10 = maxLengthCreator(1000)
+
 
 const AddPostForm: React.FC<InjectedFormProps<AddPostFormDataType>> = (
 	props
 ) => {
+
+
 	return (
+
 		<form className={s.textarea} onSubmit={props.handleSubmit}>
 			<div className={s.textareaButton}>
-				<Field
+				<Field autoFocus
 					className={s.field}
-					validate={[requiredField, maxLengthCreator10]}
+					// validate={[requiredField, maxLengthCreator10]}
 					component={Textarea}
 					name={'newPostBody'}
 					placeholder={"What's new ?"}
 				/>
 			</div>
-			<div className ={s.button}>
+			<div className={s.button}>
 				<UniversalButton title={'post'} />
 			</div>
 		</form>

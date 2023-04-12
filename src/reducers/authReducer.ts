@@ -66,8 +66,6 @@ export const login =
 	(dispatch: Dispatch<any>) => {
 		dispatch(setIsFetchingAC(true))
 		authAPI.login(email, password, rememberMe).then((res) => {
-			// console.log(res)
-
 			if (res.resultCode === 0) {
 				dispatch(getAuthUserData())
 			} else {
