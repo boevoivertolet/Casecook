@@ -242,6 +242,7 @@
     font-weight: 600;
     align-self: flex-end;
     padding-bottom: 5px;
+    margin: 5px;
 }
 
 .universalButton:hover {
@@ -324,7 +325,4 @@
     position: relative;
     justify-content: flex-end;
     display: flex;
-}
-.editDiv{
-
 }

@@ -1,0 +1,43 @@
+.addPostForm {
+    box-sizing: border-box;
+    height: auto;
+    min-height: 40px;
+
+}
+
+.form {
+    border-radius: 6px;
+    justify-content: space-between;
+    display: flex;
+    flex-direction: column;
+    min-height: 200px;
+    height: 100%;
+    box-sizing: border-box;
+    border: red solid 1px;
+    background: red;
+    align-items: flex-start;
+}
+.field {
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    min-height: 40px;
+    box-sizing: border-box;
+    width: 98%;
+}
+.field::after{
+    content:'';
+    position: absolute;
+    width: 100px;
+    height: 1px;
+    color: blue;
+}
+.whatsNew{
+    box-sizing: border-box;
+    border: green solid 1px;
+    max-height: 40px;
+    height: 40px;
+    background: green;
+    border-radius: 6px;
+    width: 100%;
+}
