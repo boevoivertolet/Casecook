@@ -2,7 +2,7 @@ import {Field, InjectedFormProps, reduxForm} from 'redux-form'
 import {Textarea} from './FormsControl/FormsControls'
 import s from '../components/Content/Content.module.css'
 import {UniversalButton} from './UniversalButton'
-import {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, useState} from "react";
 
 
 const AddPostForm: React.FC<InjectedFormProps<AddPostFormDataType>> = (

@@ -1,4 +1,5 @@
 import s from '../components/Content/Content.module.css'
+import React from "react";
 
 
 export const UniversalButton: React.FC<UniversalButtonPropsType> = ({

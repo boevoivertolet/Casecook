@@ -7,7 +7,7 @@ export const Textarea: React.FC<any> = ({input, meta, ...props}) => {
     const hasError = meta.touched && meta.error
     return (
         <div className = {styles.formControl + ' ' + (hasError ? styles.error : '')}>
-            <TextareaAutosize {...input} {...props}></TextareaAutosize>
+            <TextareaAutosize  style={{minHeight: '40px'}} {...input} {...props}></TextareaAutosize>
             {hasError && <span>{meta.error}</span>}
         </div>
     )
