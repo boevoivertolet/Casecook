@@ -1,14 +1,14 @@
 import React, {useState} from 'react';
 import './modal.css'
 
-const Modal = () => {
-    const [active, setActive] = useState<boolean>(false)
+const Modal: React.FC<ModalProps> = ({active, setActive, children}) => {
+
     return (
         <>
-            {!active && <button onClick = {() => {
+            {!active && <div onClick = {() => {
                 setActive(true)
             }}> modal
-            </button>
+            </div>
             }
             {active &&
                 <div className = {active ? 'modal active' : 'modal'} onClick = {() => {
@@ -16,12 +16,20 @@ const Modal = () => {
                 }}>
                     <div onClick = {(e) => {
                         e.stopPropagation()
-                    }} className = {active ? 'modal__content active' : 'modal_content'}></div>
+                    }} className = {active ? 'modal__content active' : 'modal_content'}>
+                        {children}
+                    </div>
                 </div>
             }
         </>
 
     );
 };
+
+type ModalProps = {
+    children?: React.ReactNode
+    active: boolean
+    setActive: (active: boolean) => void
+}
 
 export default Modal;

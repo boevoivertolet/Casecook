@@ -8,16 +8,25 @@ import Modal from "../features/modal/Modal";
 const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
     props
 ) => {
-    const [editMode, setEditMode] = useState<boolean>(false)
-    const editModeOn = () => {
-        setEditMode(true)
-    }
-    const editModeOff = () => {
-        // if (document.getElementById('tx').textContent) return
-        setEditMode(false)
-    }
+    const [active, setActive] = useState<boolean>(false)
 
     return (
+        <Modal active ={active} setActive ={setActive}>
+            <div className = {s.addPostForm}>
+                <form className = {s.form} onSubmit = {props.handleSubmit}>
+                    <Field
+                        id = {'tx'}
+                        autoFocus
+                        className = {s.field}
+                        component = {Textarea}
+                        name = {'newPostBody'}
+                        placeholder = {"What's new?"}
+                    />
+                    <UniversalButton title = {'post'} />
+                </form>
+            </div>
+        </Modal>
+
         // <div onMouseLeave = {editModeOff} className = {s.addPostForm}>
         //     {!editMode
         //         ? <div className = {s.whatsNew} onMouseEnter = {editModeOn}> What's new?</div>
@@ -61,6 +70,7 @@ const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
         // 		</form>
         // 	)}
         // </div>
+
         // <div className = {s.addPostForm} onBlur = {editModeOff} onClick = {editModeOn} id = {'tx'}>
         //     <form className = {editMode ? s.form : s.whatsNew}
         //           onSubmit = {props.handleSubmit}>
@@ -78,7 +88,7 @@ const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
         //     </form>
         // </div>
 
-        <Modal/>
+
     )
 }
 
