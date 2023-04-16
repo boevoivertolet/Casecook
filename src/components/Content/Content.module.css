@@ -39,12 +39,12 @@
     position: relative;
     bottom: 70px;
     left: 160px;
-    background-color: #333336;
+    /*background-color: #333336;*/
 }
 
 .nameDescription h2 {
     margin-left: 10px;
-    background-color: #333336;
+    /*background-color: #333336;*/
     font-weight: bold;
     color: #ffffff;
     /*text-shadow: 0 1px 0 white;*/
@@ -53,7 +53,7 @@
 }
 
 .nameDescription div {
-    background-color: inherit;
+    /*background-color: inherit;*/
     margin-left: 0;
 }
 
@@ -61,7 +61,6 @@
     position: relative;
     bottom: 70px;
     left: 15px;
-    z-index: 101;
     border: 3px #333336 solid;
     border-radius: 50%;
     width: 140px;
