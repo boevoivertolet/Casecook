@@ -2,19 +2,20 @@ import {Field, InjectedFormProps, reduxForm} from 'redux-form'
 import {Textarea} from './FormsControl/FormsControls'
 import s from '../common/AddPostForm.module.css'
 import {UniversalButton} from './UniversalButton'
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import Modal from "../features/modal/Modal";
 
 const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
     props
 ) => {
     const [active, setActive] = useState<boolean>(false)
-
     const whatsNew = s.whatsNew
+
+
 
     return (
 
-        <Modal className = {whatsNew} active = {active} setActive = {setActive} title = {"What's new?"}>
+        <Modal  className = {whatsNew} active = {active} setActive = {setActive} title = {"What's new?"}>
             <div className = {s.addPostForm}>
                 <form className = {s.form} onSubmit = {props.handleSubmit}>
                     <Field

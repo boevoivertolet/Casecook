@@ -1,20 +1,26 @@
-import React from 'react';
+import React, {KeyboardEvent} from 'react';
 import s from './Modal.module.css'
 
 
 const Modal: React.FC<ModalProps> = ({active, setActive, children, ...restProps}) => {
+    const esc = (e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'Escape') {
+            setActive(false)
+        }
+    }
 
     return (
         <>
-            {!active && <div className={restProps.className}  onClick = {() => {
+            {!active && <div className = {restProps.className} onClick = {() => {
                 setActive(true)
             }}>{restProps.title}
             </div>
             }
             {active &&
-                <div className = {active ? `${s.modal + ' ' + s.active}` : `${s.modal}`} onClick = {() => {
-                    setActive(false)
-                }}>
+                <div onKeyDown = {esc} className = {active ? `${s.modal + ' ' + s.active}` : `${s.modal}`}
+                     onClick = {() => {
+                         setActive(false)
+                     }}>
                     <div onClick = {(e) => {
                         e.stopPropagation()
                     }} className = {active ? `${s.modal__content + ' ' + s.active}` : `${s.modal__content}`}>
