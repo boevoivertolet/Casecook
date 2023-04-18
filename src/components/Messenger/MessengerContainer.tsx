@@ -5,7 +5,7 @@ import { AuthUserType } from '../../reducers/authReducer'
 import { ReduxRootStateType } from '../../store'
 import { Messenger } from './Messenger'
 
-class MessengerContainer extends React.Component<MessengerContainerType> {
+class MessengerContainer extends React.Component<MessengerContainerType, any> {
 	componentDidMount() {}
 
 	render() {

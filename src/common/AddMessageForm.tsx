@@ -1,6 +1,7 @@
 import { Field, InjectedFormProps, reduxForm } from 'redux-form'
 import { maxLengthCreator, requiredField } from '../utils/validators/validators'
 import { Textarea } from '../common/FormsControl/FormsControls'
+import React from "react";
 
 const maxLengthCreator10 = maxLengthCreator(10)
 
@@ -9,7 +10,7 @@ const AddMessageForm: React.FC<InjectedFormProps<AddMessageFormDataType>> = (
 ) => {
 	return (
 		<form onSubmit={props.handleSubmit}>
-			<div>
+			<div style={{width:'100%'}}>
 				<Field
 					validate={[requiredField, maxLengthCreator10]}
 					component={Textarea}
