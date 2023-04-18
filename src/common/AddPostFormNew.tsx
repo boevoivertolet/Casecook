@@ -10,9 +10,11 @@ const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
 ) => {
     const [active, setActive] = useState<boolean>(false)
 
+    const whatsNew = s.whatsNew
+
     return (
 
-        <Modal active = {active} setActive = {setActive} title = {"What's new?"}>
+        <Modal className = {whatsNew} active = {active} setActive = {setActive} title = {"What's new?"}>
             <div className = {s.addPostForm}>
                 <form className = {s.form} onSubmit = {props.handleSubmit}>
                     <Field

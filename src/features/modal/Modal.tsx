@@ -6,7 +6,7 @@ const Modal: React.FC<ModalProps> = ({active, setActive, children, ...restProps}
 
     return (
         <>
-            {!active && <div onClick = {() => {
+            {!active && <div className={restProps.className}  onClick = {() => {
                 setActive(true)
             }}>{restProps.title}
             </div>
@@ -32,6 +32,8 @@ type ModalProps = {
     active: boolean
     setActive: (active: boolean) => void
     title: string
+    className: string
+
 }
 
 export default Modal;
