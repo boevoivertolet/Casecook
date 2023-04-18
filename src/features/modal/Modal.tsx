@@ -1,22 +1,23 @@
-import React, {useState} from 'react';
-import './modal.css'
+import React from 'react';
+import s from './Modal.module.css'
 
-const Modal: React.FC<ModalProps> = ({active, setActive, children}) => {
+
+const Modal: React.FC<ModalProps> = ({active, setActive, children, ...restProps}) => {
 
     return (
         <>
             {!active && <div onClick = {() => {
                 setActive(true)
-            }}> modal
+            }}>{restProps.title}
             </div>
             }
             {active &&
-                <div className = {active ? 'modal active' : 'modal'} onClick = {() => {
+                <div className = {active ? `${s.modal + ' ' + s.active}` : `${s.modal}`} onClick = {() => {
                     setActive(false)
                 }}>
                     <div onClick = {(e) => {
                         e.stopPropagation()
-                    }} className = {active ? 'modal__content active' : 'modal_content'}>
+                    }} className = {active ? `${s.modal__content + ' ' + s.active}` : `${s.modal__content}`}>
                         {children}
                     </div>
                 </div>
@@ -30,6 +31,7 @@ type ModalProps = {
     children?: React.ReactNode
     active: boolean
     setActive: (active: boolean) => void
+    title: string
 }
 
 export default Modal;

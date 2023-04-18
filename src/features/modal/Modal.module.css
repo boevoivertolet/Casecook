@@ -19,13 +19,14 @@
     pointer-events: all;
 }
 
+
 .modal__content {
     position: relative;
     padding: 20px;
     border-radius: 6px;
     background-color: transparent;
     width: 500px;
-    height: 400px;
+    min-height: 200px;
     transform: scale(0.5);
     transition: 0.4s all;
 }

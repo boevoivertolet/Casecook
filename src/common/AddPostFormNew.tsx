@@ -11,7 +11,8 @@ const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
     const [active, setActive] = useState<boolean>(false)
 
     return (
-        <Modal active ={active} setActive ={setActive}>
+
+        <Modal active = {active} setActive = {setActive} title = {"What's new?"}>
             <div className = {s.addPostForm}>
                 <form className = {s.form} onSubmit = {props.handleSubmit}>
                     <Field
@@ -26,6 +27,7 @@ const AddPostFormNew: React.FC<InjectedFormProps<AddPostFormDataType>> = (
                 </form>
             </div>
         </Modal>
+
 
         // <div onMouseLeave = {editModeOff} className = {s.addPostForm}>
         //     {!editMode
